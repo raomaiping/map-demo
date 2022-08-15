@@ -1,8 +1,11 @@
 import DefaultTheme from "vitepress/theme";
 import { registerComponents } from './register-components'
 import "element-plus/dist/index.css";
-// 主题样式
+// 代码示例组件主题样式
 import 'vitepress-theme-demoblock/theme/styles/index.css'
+// ol 样式
+import "ol/ol.css";
+// 自定义样式
 import './style/index.css'
 export default {
     ...DefaultTheme,

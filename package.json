@@ -16,6 +16,7 @@
     "vitepress-theme-demoblock": "^1.4.2"
   },
   "dependencies": {
-    "element-plus": "^2.2.13"
+    "element-plus": "^2.2.13",
+    "ol": "^6.15.1"
   }
 }
