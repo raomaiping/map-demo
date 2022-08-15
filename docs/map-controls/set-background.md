@@ -9,7 +9,6 @@
 
 <script>
 import { ref, onMounted, defineComponent } from 'vue'
-import { ElButton } from 'element-plus'
 import { Map, View } from 'ol'
 import { Projection } from 'ol/proj'
 import { Image } from 'ol/layer'
@@ -50,7 +49,7 @@ export default defineComponent({
             if(isSetBackground.value){
                 map.value.style.backgroundImage = ''
             }else{
-                map.value.style.backgroundImage = `url(https://q2.qlogo.cn/headimg_dl?dst_uin=2582395486&spec=100)`
+                map.value.style.backgroundImage = 'url(https://q2.qlogo.cn/headimg_dl?dst_uin=2582395486&spec=100)'
             }
             isSetBackground.value = !isSetBackground.value
         }
