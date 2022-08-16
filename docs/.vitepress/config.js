@@ -115,6 +115,10 @@ function getSidebar() {
                     text: "百度地图",
                     link: "/third-party-map-display/baidu-map/index.md",
                 },
+                {
+                    text: "谷歌地图",
+                    link: "/third-party-map-display/google-map/index.md",
+                },
             ],
         },
     ]
