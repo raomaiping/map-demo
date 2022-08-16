@@ -26,8 +26,10 @@ export default defineComponent({
                 code: 'EPSG:3857',
                 extent,
             })
-            var imageLayer = new Image({
+            const imageLayer = new Image({
                 source: new ImageStatic({
+                // 设置版权
+                attributions: '<a href="https://juejin.cn/user/588993965598407" target="_blank">&copy; 前端小菜鸟吖</a>', 
                 url: 'https://www.raomaiping.host/images/world6.jpg',
                 projection,
                 imageExtent: extent,
