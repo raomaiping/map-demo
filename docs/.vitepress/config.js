@@ -103,6 +103,10 @@ function getSidebar() {
                     text: "OSM",
                     link: "/third-party-map-display/osm/index.md",
                 },
+                {
+                    text: "必应地图",
+                    link: "/third-party-map-display/bing/index.md",
+                },
             ],
         },
     ]
