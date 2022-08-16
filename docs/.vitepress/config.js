@@ -59,6 +59,10 @@ function getSidebar() {
                         text: "鹰眼控件",
                         link: "/map-controls/overview-map/index.md",
                     },
+                    {
+                        text: "全屏显示控件",
+                        link: "/map-controls/full-screen/index.md",
+                    },
                 ],
             },
         ],
