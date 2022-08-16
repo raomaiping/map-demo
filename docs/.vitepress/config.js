@@ -67,6 +67,10 @@ function getSidebar() {
                         text: "图层探查控件",
                         link: "/map-controls/layer-search/index.md",
                     },
+                    {
+                        text: "动画效果",
+                        link: "/map-controls/map-animation/index.md",
+                    },
                 ],
             },
         ],
