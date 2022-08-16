@@ -27,6 +27,10 @@ export default {
                             text: "导航控件",
                             link: "/map-controls/navigation/index",
                         },
+                        {
+                            text: "基本操作",
+                            link: "/map-controls/operation/index",
+                        },
                     ],
                 },
             ],

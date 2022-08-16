@@ -1,7 +1,5 @@
 import DefaultTheme from "vitepress/theme";
 import "element-plus/dist/index.css";
-// ol 样式
-import "ol/ol.css";
 export default {
     ...DefaultTheme,
     enhanceApp: async ({ app, router, siteData, isServer }) => {

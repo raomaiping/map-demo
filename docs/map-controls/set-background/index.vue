@@ -14,6 +14,7 @@ import { Projection } from 'ol/proj'
 import { Image } from 'ol/layer'
 import { ImageStatic } from 'ol/source'
 import { getCenter } from 'ol/extent'
+import { ATTRIBUTIONS } from "../../constants";
 
 // 单张图片的矢量图层
 const map = ref(null)
@@ -26,7 +27,7 @@ const initMap = () => {
     })
     var imageLayer = new Image({
         source: new ImageStatic({
-            attributions: '<a href="https://juejin.cn/user/588993965598407" target="_blank">&copy; 前端小菜鸟吖</a>',
+            attributions: ATTRIBUTIONS,
             url: 'https://www.raomaiping.host/images/world6.jpg',
             projection,
             imageExtent: extent,

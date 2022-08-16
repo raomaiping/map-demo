@@ -9,11 +9,12 @@ import { Map, View } from "ol";
 import { defaults, ZoomToExtent } from "ol/control";
 import { Tile as TileLayer } from "ol/layer";
 import { XYZ } from "ol/source";
+import { MAPURL, ATTRIBUTIONS } from "../../constants";
 const map = ref(null)
 const raster = new TileLayer({
     source: new XYZ({
-        attributions: '<a href="https://juejin.cn/user/588993965598407" target="_blank">&copy; 前端小菜鸟吖</a>',
-        url: "https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}.jpg?key=NOHd1j0dpdUprP5PNjS3",
+        attributions: ATTRIBUTIONS,
+        url: MAPURL,
         maxZoom: 20,
     }),
 });
