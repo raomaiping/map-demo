@@ -99,6 +99,10 @@ function getSidebar() {
                     text: "GPX",
                     link: "/third-party-map-display/gpx/index.md",
                 },
+                {
+                    text: "OSM",
+                    link: "/third-party-map-display/osm/index.md",
+                },
             ],
         },
     ]
