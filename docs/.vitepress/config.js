@@ -119,6 +119,10 @@ function getSidebar() {
                     text: "谷歌地图",
                     link: "/third-party-map-display/google-map/index.md",
                 },
+                {
+                    text: "高德地图",
+                    link: "/third-party-map-display/gao-de-map/index.md",
+                },
             ],
         },
     ]
