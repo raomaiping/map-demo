@@ -1,6 +1,7 @@
 export default {
     title: 'OpenLayers Demo',
     description: 'OpenLayers',
+    lastUpdated: true,
     head: [
         ['link',
             { rel: 'icon', href: '/logo.png' },
@@ -8,7 +9,10 @@ export default {
         ],
     ],
     themeConfig: {
-        siteTitle: false,
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
         logo: "/logo.png",
         nav: [
             { text: "案例", link: "/map-controls/set-background/index" },
@@ -21,24 +25,25 @@ export default {
                     items: [
                         {
                             text: "设置背景",
-                            link: "/map-controls/set-background/index",
+                            link: "/map-controls/set-background/index.md",
                         },
                         {
                             text: "导航控件",
-                            link: "/map-controls/navigation/index",
+                            link: "/map-controls/navigation/index.md",
                         },
                         {
                             text: "基本操作",
-                            link: "/map-controls/operation/index",
+                            link: "/map-controls/operation/index.md",
                         },
                         {
                             text: "图层控件",
-                            link: "/map-controls/layer-control/index",
+                            link: "/map-controls/layer-control/index.md",
                         },
                     ],
                 },
             ],
         },
+        lastUpdatedText: '最近更新时间'
     },
-    ignoreDeadLinks: true
+
 };
