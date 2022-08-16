@@ -18,32 +18,41 @@ export default {
             { text: "案例", link: "/map-controls/set-background/index" },
         ],
         socialLinks: [{ icon: "github", link: "http://10.10.20.230/architecture/map" }],
-        sidebar: {
-            "/map-controls/": [
-                {
-                    text: "地图控件",
-                    items: [
-                        {
-                            text: "设置背景",
-                            link: "/map-controls/set-background/index.md",
-                        },
-                        {
-                            text: "导航控件",
-                            link: "/map-controls/navigation/index.md",
-                        },
-                        {
-                            text: "基本操作",
-                            link: "/map-controls/operation/index.md",
-                        },
-                        {
-                            text: "图层控件",
-                            link: "/map-controls/layer-control/index.md",
-                        },
-                    ],
-                },
-            ],
-        },
+        sidebar: getSidebar(),
         lastUpdatedText: '最近更新时间'
     },
 
 };
+
+
+function getSidebar() {
+    return {
+        "/map-controls/": [
+            {
+                text: "地图控件",
+                items: [
+                    {
+                        text: "设置背景",
+                        link: "/map-controls/set-background/index.md",
+                    },
+                    {
+                        text: "导航控件",
+                        link: "/map-controls/navigation/index.md",
+                    },
+                    {
+                        text: "基本操作",
+                        link: "/map-controls/operation/index.md",
+                    },
+                    {
+                        text: "图层控件",
+                        link: "/map-controls/layer-control/index.md",
+                    },
+                    {
+                        text: "鼠标位置",
+                        link: "/map-controls/mouse-position/index.md",
+                    },
+                ],
+            },
+        ],
+    }
+}
