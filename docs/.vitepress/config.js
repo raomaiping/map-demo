@@ -87,6 +87,10 @@ function getSidebar() {
                     text: "ArcGis",
                     link: "/third-party-map-display/arc-gis/index.md",
                 },
+                {
+                    text: "GeoJSON",
+                    link: "/third-party-map-display/geo-json/index.md",
+                },
             ],
         },
     ]
