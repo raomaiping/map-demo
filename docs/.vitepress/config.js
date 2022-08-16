@@ -123,6 +123,10 @@ function getSidebar() {
                     text: "高德地图",
                     link: "/third-party-map-display/gao-de-map/index.md",
                 },
+                {
+                    text: "瓦片网格",
+                    link: "/third-party-map-display/canvas-tiles/index.md",
+                },
             ],
         },
     ]
