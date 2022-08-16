@@ -107,6 +107,10 @@ function getSidebar() {
                     text: "必应地图",
                     link: "/third-party-map-display/bing/index.md",
                 },
+                {
+                    text: "天地图",
+                    link: "/third-party-map-display/tianditu-map/index.md",
+                },
             ],
         },
     ]
