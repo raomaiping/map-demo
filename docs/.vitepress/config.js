@@ -71,6 +71,10 @@ function getSidebar() {
                         text: "动画效果",
                         link: "/map-controls/map-animation/index.md",
                     },
+                    {
+                        text: "测量",
+                        link: "/map-controls/measure/index.md",
+                    },
                 ],
             },
         ],
