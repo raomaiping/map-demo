@@ -45,7 +45,7 @@ const initMap = (mousePositionControl) => {
         ],
         view: new View({
             projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3 857
-            center: [0, 0], // 深圳坐标
+            center: [0, 0],
             //地图初始显示级别
             zoom: 5,
         }),

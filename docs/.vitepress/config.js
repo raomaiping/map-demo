@@ -26,61 +26,68 @@ export default {
 
 
 function getSidebar() {
-    return {
-        "/map-controls/": [
-            {
-                text: "地图控件",
-                items: [
-                    {
-                        text: "设置背景",
-                        link: "/map-controls/set-background/index.md",
-                    },
-                    {
-                        text: "导航控件",
-                        link: "/map-controls/navigation/index.md",
-                    },
-                    {
-                        text: "基本操作",
-                        link: "/map-controls/operation/index.md",
-                    },
-                    {
-                        text: "图层控件",
-                        link: "/map-controls/layer-control/index.md",
-                    },
-                    {
-                        text: "鼠标位置",
-                        link: "/map-controls/mouse-position/index.md",
-                    },
-                    {
-                        text: "比例尺控件",
-                        link: "/map-controls/scale-line/index.md",
-                    },
-                    {
-                        text: "鹰眼控件",
-                        link: "/map-controls/overview-map/index.md",
-                    },
-                    {
-                        text: "全屏显示控件",
-                        link: "/map-controls/full-screen/index.md",
-                    },
-                    {
-                        text: "图层探查控件",
-                        link: "/map-controls/layer-search/index.md",
-                    },
-                    {
-                        text: "动画效果",
-                        link: "/map-controls/map-animation/index.md",
-                    },
-                    {
-                        text: "测量",
-                        link: "/map-controls/measure/index.md",
-                    },
-                    {
-                        text: "自定义控件",
-                        link: "/map-controls/custom-control/index.md",
-                    },
-                ],
-            },
-        ],
-    }
+    return [
+        {
+            text: "地图控件",
+            items: [
+                {
+                    text: "设置背景",
+                    link: "/map-controls/set-background/index.md",
+                },
+                {
+                    text: "导航控件",
+                    link: "/map-controls/navigation/index.md",
+                },
+                {
+                    text: "基本操作",
+                    link: "/map-controls/operation/index.md",
+                },
+                {
+                    text: "图层控件",
+                    link: "/map-controls/layer-control/index.md",
+                },
+                {
+                    text: "鼠标位置",
+                    link: "/map-controls/mouse-position/index.md",
+                },
+                {
+                    text: "比例尺控件",
+                    link: "/map-controls/scale-line/index.md",
+                },
+                {
+                    text: "鹰眼控件",
+                    link: "/map-controls/overview-map/index.md",
+                },
+                {
+                    text: "全屏显示控件",
+                    link: "/map-controls/full-screen/index.md",
+                },
+                {
+                    text: "图层探查控件",
+                    link: "/map-controls/layer-search/index.md",
+                },
+                {
+                    text: "动画效果",
+                    link: "/map-controls/map-animation/index.md",
+                },
+                {
+                    text: "测量",
+                    link: "/map-controls/measure/index.md",
+                },
+                {
+                    text: "自定义控件",
+                    link: "/map-controls/custom-control/index.md",
+                },
+            ],
+        },
+        {
+            text: "第三方地图显示",
+            items: [
+                {
+                    text: "ArcGis",
+                    link: "/third-party-map-display/arc-gis/index.md",
+                },
+            ],
+        },
+    ]
 }
