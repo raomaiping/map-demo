@@ -11,7 +11,7 @@ export default {
         siteTitle: false,
         logo: "/logo.png",
         nav: [
-            { text: "案例", link: "/map-controls/set-background" },
+            { text: "案例", link: "/map-controls/set-background/index" },
         ],
         socialLinks: [{ icon: "github", link: "http://10.10.20.230/architecture/map" }],
         sidebar: {
@@ -21,7 +21,11 @@ export default {
                     items: [
                         {
                             text: "设置背景",
-                            link: "/map-controls/set-background",
+                            link: "/map-controls/set-background/index",
+                        },
+                        {
+                            text: "导航控件",
+                            link: "/map-controls/navigation/index",
                         },
                     ],
                 },

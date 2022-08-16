@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /map-controls/set-background
+      link: /map-controls/set-background/index
     - theme: alt
       text: 在 GitLab 上查看
       link: http://10.10.20.230/architecture/map

@@ -1,5 +1,5 @@
 <template>
-    <div id="map" ref="map">
+    <div class="map" ref="map">
         <el-button type="primary" class="btn" @click="setBackgroundImage">
             {{ isSetBackgroundImage ? '取消背景' : '设置背景' }}
         </el-button>
@@ -34,7 +34,7 @@ const initMap = () => {
     })
     new Map({
         //初始化map
-        target: 'map',
+        target: map.value,
         layers: [imageLayer],
         view: new View({
             projection,
