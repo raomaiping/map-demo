@@ -51,6 +51,10 @@ function getSidebar() {
                         text: "鼠标位置",
                         link: "/map-controls/mouse-position/index.md",
                     },
+                    {
+                        text: "比例尺控件",
+                        link: "/map-controls/scale-line/index.md",
+                    },
                 ],
             },
         ],
