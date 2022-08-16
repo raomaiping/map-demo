@@ -91,6 +91,10 @@ function getSidebar() {
                     text: "GeoJSON",
                     link: "/third-party-map-display/geo-json/index.md",
                 },
+                {
+                    text: "KML",
+                    link: "/third-party-map-display/kml/index.md",
+                },
             ],
         },
     ]
