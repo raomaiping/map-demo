@@ -8,12 +8,10 @@
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "register:components": "vitepress-rc"
+    "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.4",
-    "vitepress-theme-demoblock": "^1.4.2"
+    "vitepress": "^1.0.0-alpha.4"
   },
   "dependencies": {
     "element-plus": "^2.2.13",

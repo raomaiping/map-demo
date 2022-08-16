@@ -28,51 +28,5 @@ export default {
             ],
         },
     },
-    markdown: {
-        config: (md) => {
-            const {
-                demoBlockPlugin
-            } = require('vitepress-theme-demoblock')
-            md.use(demoBlockPlugin, {
-                scriptImports: [
-                    "import * as ElementPlus from 'element-plus'",
-                    "import * as Ol from 'ol'",
-                    "import * as Proj from 'ol/proj'",
-                    "import * as Layer from 'ol/layer'",
-                    "import * as Source from 'ol/source'",
-                    "import * as Extent from 'ol/extent'",
-                ],
-                scriptReplaces: [
-                    {
-                        searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
-                        replaceValue: 'const { defineComponent: _defineComponent } = Vue'
-                    },
-                    {
-                        searchValue: /import ({.*}) from 'element-plus'/g,
-                        replaceValue: (s, s1) => `const ${s1} = ElementPlus`
-                    },
-                    {
-                        searchValue: /import ({.*}) from 'ol'/g,
-                        replaceValue: (s, s1) => `const ${s1} = Ol`
-                    },
-                    {
-                        searchValue: /import ({.*}) from 'ol\/proj'/g,
-                        replaceValue: (s, s1) => `const ${s1} = Proj`
-                    },
-                    {
-                        searchValue: /import ({.*}) from 'ol\/layer'/g,
-                        replaceValue: (s, s1) => `const ${s1} = Layer`
-                    },
-                    {
-                        searchValue: /import ({.*}) from 'ol\/source'/g,
-                        replaceValue: (s, s1) => `const ${s1} = Source`
-                    },
-                    {
-                        searchValue: /import ({.*}) from 'ol\/extent'/g,
-                        replaceValue: (s, s1) => `const ${s1} = Extent`
-                    }
-                ]
-            })
-        },
-    }
+    ignoreDeadLinks: true
 };
