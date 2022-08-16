@@ -75,6 +75,10 @@ function getSidebar() {
                         text: "测量",
                         link: "/map-controls/measure/index.md",
                     },
+                    {
+                        text: "自定义控件",
+                        link: "/map-controls/custom-control/index.md",
+                    },
                 ],
             },
         ],
