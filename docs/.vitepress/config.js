@@ -63,6 +63,10 @@ function getSidebar() {
                         text: "全屏显示控件",
                         link: "/map-controls/full-screen/index.md",
                     },
+                    {
+                        text: "图层探查控件",
+                        link: "/map-controls/layer-search/index.md",
+                    },
                 ],
             },
         ],

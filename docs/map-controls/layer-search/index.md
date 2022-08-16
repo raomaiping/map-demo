@@ -1,10 +1,10 @@
 <script setup>
 import Map from './index.vue'
 </script>
-# 全屏显示控件
+# 图层探查控件
 
 ::: tip
-点击右上角的全屏按钮，全屏显示地图。
+鼠标滑过地图，可对地图进行探查。
 :::
 
 <Map />
@@ -13,6 +13,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/map-controls/full-screen/index.vue
+<<< @/map-controls/layer-search/index.vue
 
 :::
