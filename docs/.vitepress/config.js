@@ -31,6 +31,10 @@ export default {
                             text: "基本操作",
                             link: "/map-controls/operation/index",
                         },
+                        {
+                            text: "图层控件",
+                            link: "/map-controls/layer-control/index",
+                        },
                     ],
                 },
             ],
