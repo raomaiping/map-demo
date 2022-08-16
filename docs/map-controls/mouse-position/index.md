@@ -1,7 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
-# 图层控件
+# 鼠标位置
 
 ::: tip
 鼠标滑过地图显示坐标位置。

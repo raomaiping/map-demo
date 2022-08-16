@@ -55,6 +55,10 @@ function getSidebar() {
                         text: "比例尺控件",
                         link: "/map-controls/scale-line/index.md",
                     },
+                    {
+                        text: "鹰眼控件",
+                        link: "/map-controls/overview-map/index.md",
+                    },
                 ],
             },
         ],

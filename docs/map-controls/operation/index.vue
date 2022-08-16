@@ -118,7 +118,7 @@ onMounted(() => {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #map {
-    width: 650px;
+    width: 100%;
     height: 650px;
 }
 

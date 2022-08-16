@@ -1,10 +1,10 @@
 <script setup>
 import Map from './index.vue'
 </script>
-# 比例尺控件
+# 鹰眼控件
 
 ::: tip
-缩放地图可以看到比例尺的大小跟随着变化。
+在地图右上角添加鹰眼控件。
 :::
 
 <Map />
@@ -13,6 +13,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/map-controls/scale-line/index.vue
+<<< @/map-controls/overview-map/index.vue
 
 :::
