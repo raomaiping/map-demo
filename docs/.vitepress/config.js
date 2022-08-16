@@ -95,6 +95,10 @@ function getSidebar() {
                     text: "KML",
                     link: "/third-party-map-display/kml/index.md",
                 },
+                {
+                    text: "GPX",
+                    link: "/third-party-map-display/gpx/index.md",
+                },
             ],
         },
     ]
