@@ -127,6 +127,10 @@ function getSidebar() {
                     text: "瓦片网格",
                     link: "/third-party-map-display/canvas-tiles/index.md",
                 },
+                {
+                    text: "地图打印",
+                    link: "/third-party-map-display/map-export/index.md",
+                },
             ],
         },
     ]
