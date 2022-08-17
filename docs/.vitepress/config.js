@@ -143,6 +143,10 @@ function getSidebar() {
           text: '图片标注',
           link: '/map-marker/picture/index.md',
         },
+        {
+          text: '图文标注',
+          link: '/map-marker/text-pic/index.md',
+        },
       ],
     },
   ]
