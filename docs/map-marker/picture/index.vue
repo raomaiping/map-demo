@@ -1,10 +1,4 @@
 <template>
-  <el-input
-    v-model="state.input"
-    placeholder="输入文字后点击地图方可添加文字标注"
-    clearable
-    style="margin-bottom: 20px;"
-  />
   <div id="map"></div>
 </template>
 
@@ -16,12 +10,10 @@ import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'
 import { defaults, FullScreen } from 'ol/control'
 import { XYZ, Vector as VectorSource } from 'ol/source'
 import { Point } from 'ol/geom'
-import { ElMessage } from 'element-plus'
-import { createLabelStyle, addVectorLabel } from './tools'
 import { ATTRIBUTIONS, SHENZHEN, MAPURL } from '../../constants'
+import { createLabelStyle, addVectorLabel } from './tools'
 
 const state = reactive({
-  input: '',
   map: null,
   vectorSource: null,
 })
@@ -55,8 +47,6 @@ const initMap = () => {
   //实例化Vector要素，通过矢量图层添加到地图容器中
   const iconFeature = new Feature({
     geometry: new Point(SHENZHEN),
-    //名称属性
-    name: '深圳市',
   })
   iconFeature.setStyle(createLabelStyle(iconFeature))
   //矢量标注的数据源
@@ -73,20 +63,12 @@ const initMap = () => {
 onMounted(() => {
   initMap()
   state.map.on('click', (evt) => {
-    if (!state.input) {
-      ElMessage({
-        message: '请先添加标注名',
-        type: 'warning',
-      })
-      return
-    }
     //鼠标单击点坐标
     const coordinate = evt.coordinate
     //添加一个新的标注（矢量要素）
     addVectorLabel({
       coordinate,
       vectorSource: state.vectorSource,
-      name: state.input,
     })
   })
 })

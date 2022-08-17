@@ -139,6 +139,10 @@ function getSidebar() {
           text: '文字标注',
           link: '/map-marker/text/index.md',
         },
+        {
+          text: '图片标注',
+          link: '/map-marker/picture/index.md',
+        },
       ],
     },
   ]
