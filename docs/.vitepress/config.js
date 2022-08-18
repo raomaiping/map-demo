@@ -159,6 +159,10 @@ function getSidebar() {
           text: '街道标注',
           link: '/map-marker/street-marked/index.md',
         },
+        {
+          text: '聚合标注',
+          link: '/map-marker/cluster-labels/index.md',
+        },
       ],
     },
   ]
