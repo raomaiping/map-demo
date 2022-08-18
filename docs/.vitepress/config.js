@@ -167,6 +167,10 @@ function getSidebar() {
           text: '水纹动画',
           link: '/map-marker/water-wave-animation/index.md',
         },
+        {
+          text: '箭头动画',
+          link: '/map-marker/arrow-animation/index.md',
+        },
       ],
     },
   ]
