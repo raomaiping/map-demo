@@ -155,6 +155,10 @@ function getSidebar() {
           text: 'Popup弹窗',
           link: '/map-marker/popup/index.md',
         },
+        {
+          text: '街道标注',
+          link: '/map-marker/street-marked/index.md',
+        },
       ],
     },
   ]
