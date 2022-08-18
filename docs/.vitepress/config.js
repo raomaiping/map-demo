@@ -147,6 +147,10 @@ function getSidebar() {
           text: '图文标注',
           link: '/map-marker/text-pic/index.md',
         },
+        {
+          text: '拖拽添加覆盖物',
+          link: '/map-marker/drag-to-add-mulch/index.md',
+        },
       ],
     },
   ]
