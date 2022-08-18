@@ -151,6 +151,10 @@ function getSidebar() {
           text: '拖拽添加覆盖物',
           link: '/map-marker/drag-to-add-mulch/index.md',
         },
+        {
+          text: 'Popup弹窗',
+          link: '/map-marker/popup/index.md',
+        },
       ],
     },
   ]
