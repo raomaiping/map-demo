@@ -163,6 +163,10 @@ function getSidebar() {
           text: '聚合标注',
           link: '/map-marker/cluster-labels/index.md',
         },
+        {
+          text: '水纹动画',
+          link: '/map-marker/water-wave-animation/index.md',
+        },
       ],
     },
   ]
