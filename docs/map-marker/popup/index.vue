@@ -191,7 +191,7 @@ onMounted(() => {
 #popup-content .markerInfo {
   font-weight: bold;
 }
-::v-deep .markerImg {
+:deep(.markerImg) {
   width: 210px;
 }
 </style>

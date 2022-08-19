@@ -121,7 +121,7 @@ onMounted(() => {
   height: 650px;
 }
 /**橙色点扩散闪烁样式*/
-::v-deep .point_animation {
+:deep(.point_animation) {
   background: #ff9900;
   width: 6px;
   height: 6px;
@@ -129,8 +129,8 @@ onMounted(() => {
   border-radius: 50%;
   position: absolute;
 }
-::v-deep .point_animation p,
-::v-deep .point_animation span {
+:deep(.point_animation p),
+:deep(.point_animation span) {
   position: absolute;
   width: 4px;
   height: 4px;
@@ -139,7 +139,7 @@ onMounted(() => {
   margin: 0px;
   border-radius: 50%;
 }
-::v-deep .point_animation span {
+:deep(.point_animation span) {
   animation-delay: 1.5s;
 }
 @keyframes point_animation {

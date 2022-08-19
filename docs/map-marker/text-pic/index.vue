@@ -91,7 +91,7 @@ const initMap = () => {
   })
   state.map.addOverlay(marker)
   marker.getElement().title = '南昌市'
-  var text = new Overlay({
+  const text = new Overlay({
     position: NANCHANG,
     element: document.getElementById('address'),
   })
@@ -136,7 +136,7 @@ onMounted(() => {
   height: 50px;
   line-height: 50px;
 }
-::v-deep .marker {
+:deep(.marker) {
   width: 20px;
   height: 20px;
   border: 1px solid #088;
@@ -145,7 +145,7 @@ onMounted(() => {
   opacity: 0.5;
 }
 
-::v-deep .address {
+:deep(.address) {
   text-decoration: none;
   color: #aa3300;
   font-size: 14px;
