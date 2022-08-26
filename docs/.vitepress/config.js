@@ -197,6 +197,10 @@ function getSidebar() {
           text: '视图联动',
           link: '/others/multi-view-linkage/index.md',
         },
+        {
+          text: '热力图',
+          link: '/others/heatmap/index.md',
+        },
       ],
     },
   ]
