@@ -180,6 +180,10 @@ function getSidebar() {
           text: '绘制几何图形',
           link: '/drawing/draw-features/index.md',
         },
+        {
+          text: '图形交互编辑',
+          link: '/drawing/modify-features/index.md',
+        },
       ],
     },
   ]
