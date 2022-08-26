@@ -151,5 +151,6 @@ onMounted(() => {
   transform: translateX(-50%);
   z-index: 1;
   color: red;
+  text-align: center;
 }
 </style>

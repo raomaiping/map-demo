@@ -193,6 +193,10 @@ function getSidebar() {
           text: '动态投影转换',
           link: '/others/projection-transformation/index.md',
         },
+        {
+          text: '视图联动',
+          link: '/others/multi-view-linkage/index.md',
+        },
       ],
     },
   ]
