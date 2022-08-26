@@ -80,8 +80,6 @@ const initMap = () => {
       new FullScreen(), //加载全屏显示控件（目前支持非IE内核浏览器）
     ]),
   })
-  // 侧边栏变化更新地图
-  updateMapSize(map)
 }
 // 设置热点半径
 const handleRadiusChange = () => {
