@@ -201,6 +201,10 @@ function getSidebar() {
           text: '热力图',
           link: '/others/heatmap/index.md',
         },
+        {
+          text: '轨迹跟踪',
+          link: '/others/trajectory-tracking/index.md',
+        },
       ],
     },
   ]
