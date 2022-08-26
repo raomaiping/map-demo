@@ -186,5 +186,14 @@ function getSidebar() {
         },
       ],
     },
+    {
+      text: '高级功能',
+      items: [
+        {
+          text: '动态投影转换',
+          link: '/others/projection-transformation/index.md',
+        },
+      ],
+    },
   ]
 }
