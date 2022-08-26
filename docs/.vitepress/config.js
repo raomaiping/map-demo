@@ -173,5 +173,14 @@ function getSidebar() {
         },
       ],
     },
+    {
+      text: '图形绘制',
+      items: [
+        {
+          text: '绘制几何图形',
+          link: '/drawing/draw-features/index.md',
+        },
+      ],
+    },
   ]
 }

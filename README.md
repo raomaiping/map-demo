@@ -13,7 +13,8 @@ yarn docs:dev
 
 # 打包
 先删除 node_modules/ol/package.json  里面的 "type": "module",不然会产生打包错误。\
-如图：\
+如图：
+
 ![error](./error.png)
 
 ## 删除之后在运行构建命令
