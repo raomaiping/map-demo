@@ -13,6 +13,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/leaflet/introduction/orientation-of-map/index.vue
+<<< @/leaflet/introduction/map-display/index.vue
 
 :::

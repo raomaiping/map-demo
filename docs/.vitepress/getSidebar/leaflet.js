@@ -12,4 +12,13 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '地图显示-地图服务',
+    items: [
+      {
+        text: 'OSM',
+        link: '/leaflet/map-display-map-server/osm/index.md',
+      },
+    ],
+  },
 ]

@@ -23,7 +23,7 @@ const initMap = () => {
   })
   //注册定位成功事件
   map.on('locationfound', (e) => {
-    var radius = e.accuracy / 2
+    const radius = e.accuracy / 2
     L.marker(e.latlng).addTo(map).bindPopup('你就在这个圈内')
     L.circle(e.latlng, radius).addTo(map)
   })
