@@ -6,6 +6,10 @@ export const LeafLet = [
         text: '地图显示',
         link: '/leaflet/introduction/map-display/index.md',
       },
+      {
+        text: '地图定位',
+        link: '/leaflet/introduction/orientation-of-map/index.md',
+      },
     ],
   },
 ]
