@@ -27,6 +27,10 @@ export const LeafLet = [
         text: 'Google',
         link: '/leaflet/map-display-map-server/google/index.md',
       },
+      {
+        text: '天地图',
+        link: '/leaflet/map-display-map-server/tian-di-tu/index.md',
+      },
     ],
   },
 ]

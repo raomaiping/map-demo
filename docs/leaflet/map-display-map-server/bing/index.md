@@ -4,7 +4,7 @@ import Map from './index.vue'
 # Bing
 
 ::: tip
-必应地图。
+加载必应地图。
 :::
 
 <Map />

@@ -4,7 +4,7 @@ import Map from './index.vue'
 # Google
 
 ::: tip
-谷歌地图。
+加载谷歌地图。
 :::
 
 <Map />

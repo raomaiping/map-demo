@@ -5,7 +5,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import { SHENZHEN, ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS, SHENZHEN } from '../../../constants'
 
 const initMap = () => {
   const position = SHENZHEN.reverse()
@@ -22,15 +22,19 @@ const initMap = () => {
     //当前显示等级
     zoom: 12,
   })
-  //定义Google地图，并加载到地图容器中
+  //加载天地图矢量图层
   L.tileLayer(
-    'http://mt1.google.cn/vt/lyrs=m@207000000&hl=zh-CN&gl=CN&src=app&x={x}&y={y}&z={z}&s=Galile',
+    'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
     {
-      //最小显示等级
-      minZoom: 1,
-      //最大显示等级
-      maxZoom: 18,
-      //设置地图不连续显示
+      noWrap: true,
+      //设置版权
+      attribution: ATTRIBUTIONS,
+    },
+  ).addTo(map)
+  //加载天地图矢量注记图层
+  L.tileLayer(
+    'http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    {
       noWrap: true,
       //设置版权
       attribution: ATTRIBUTIONS,

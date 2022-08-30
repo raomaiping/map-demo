@@ -1,10 +1,10 @@
 <script setup>
 import Map from './index.vue'
 </script>
-# OSM
+# 天地图
 
 ::: tip
-加载OSM地图。
+加载天地图。
 :::
 
 <Map />
@@ -13,6 +13,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-display-map-server/osm/index.vue
+<<< @/leaflet/map-display-map-server/tian-di-tu/index.vue
 
 :::
