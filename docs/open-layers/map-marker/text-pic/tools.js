@@ -1,7 +1,6 @@
 import { Style, Icon, Text, Fill, Stroke } from 'ol/style'
 import { Feature, Overlay } from 'ol'
 import { Point } from 'ol/geom'
-import image from '../../../public/blue.png'
 /**
  * 创建矢量标注样式函数,设置image为图标ol.style.Icon
  * @param {ol.Feature} feature 要素
@@ -27,7 +26,7 @@ export const createLabelStyle = (feature) =>
         //透明度
         opacity: 0.75,
         //图标的url
-        src: image,
+        src: '/image//blue.png',
       }),
     ),
     text: new Text({

@@ -9,7 +9,7 @@ hero:
   text: Map 案例合集 
   tagline: 没啥特点仅供学习
   image:
-    src: /dog.png
+    src: /image/dog.png
     alt: OpenLayers
   actions:
     - theme: brand

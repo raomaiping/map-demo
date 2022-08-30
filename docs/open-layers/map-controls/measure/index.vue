@@ -143,7 +143,6 @@ const addInteraction = () => {
     measureTooltipElement: state.measureTooltipElement,
     map: state.map,
   })
-  console.log(state.measureTooltipElement)
   //创建帮助提示框
   ;[state.helpTooltipElement, state.helpTooltip] = createHelpTooltip({
     helpTooltipElement: state.helpTooltipElement,
@@ -202,7 +201,6 @@ const addInteraction = () => {
         measureTooltipElement: state.measureTooltipElement,
         map: state.map,
       })
-      console.log(state.measureTooltipElement)
       unByKey(listener)
     },
     this,

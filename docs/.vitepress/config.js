@@ -6,7 +6,7 @@ export default {
   head: [
     [
       'link',
-      { rel: 'icon', href: '/logo.webp' },
+      { rel: 'icon', href: '/image/logo.webp' },
       //浏览器的标签栏的网页图标，第一个'/'会遍历public文件夹的文件
     ],
   ],
@@ -15,7 +15,7 @@ export default {
       prev: '上一页',
       next: '下一页',
     },
-    logo: '/logo.webp',
+    logo: '/image/logo.webp',
     nav: [
       {
         text: 'OpenLayers 案例合集',

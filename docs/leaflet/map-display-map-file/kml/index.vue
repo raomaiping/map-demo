@@ -29,7 +29,7 @@ const initMap = () => {
   }).addTo(map)
 
   //加载KML，需指定KML数据的路径
-  fetch('./KML_Samples.kml')
+  fetch('/kml/KML_Samples.kml')
     .then((res) => res.text())
     .then((kmltext) => {
       const parser = new DOMParser()

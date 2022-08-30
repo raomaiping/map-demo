@@ -16,7 +16,6 @@ class RotateNorthControl extends Control {
    */
   constructor(opt_options) {
     const options = opt_options || {}
-    console.log(opt_options)
     const button = document.createElement('button')
     button.innerHTML = 'N'
 

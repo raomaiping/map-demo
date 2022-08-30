@@ -51,7 +51,7 @@ const style = {
 
 const vector = new VectorLayer({
   source: new VectorSource({
-    url: './fells_loop.gpx',
+    url: '/gpx/fells_loop.gpx',
     format: new GPX(),
   }),
   style: function (feature) {

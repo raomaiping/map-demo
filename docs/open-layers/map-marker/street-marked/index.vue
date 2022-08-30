@@ -41,7 +41,7 @@ const initMap = () => {
         declutter: true,
         source: new VectorSource({
           format: new GeoJSON(),
-          url: './vienna-streets.geojson',
+          url: '/geojson/vienna-streets.geojson',
         }),
         style: function (feature) {
           style.getText().setText(feature.get('name'))

@@ -26,12 +26,10 @@ import { MAPURL, ATTRIBUTIONS } from '../../../constants'
 import { defaults as defaultInteractions } from 'ol/interaction'
 import { addVectorLabel } from './tools'
 import Drag from './drag'
-import chips from '../../../public/chips.png'
-import ice_cream from '../../../public/ice_cream.png'
 let map, menu_overlay
 const menu = ref(null)
 const selectIcon = ref(null)
-const imageList = [chips, ice_cream]
+const imageList = ['/image/chips.png', '/image/ice_cream.png']
 const raster = new TileLayer({
   source: new XYZ({
     attributions: ATTRIBUTIONS,

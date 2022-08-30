@@ -99,7 +99,6 @@ const initMap = () => {
   map.on('click', (evt) => {
     //判断当前单击处是否有要素，捕获到要素时弹出popup
     const feature = map.forEachFeatureAtPixel(evt.pixel, (feature) => feature)
-    console.log(feature)
     if (feature) {
       //清空popup的内容容器
       content.innerHTML = ''

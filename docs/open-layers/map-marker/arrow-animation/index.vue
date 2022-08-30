@@ -27,8 +27,8 @@ import {
   fmidStyle,
   finnerStyle,
 } from './styles'
-import soul from './soul.json'
-import arrow from '../../../public/arrow.png'
+import soul from '../../../public/json/soul.json'
+import arrow from '../../../public/image/arrow.png'
 
 const initMap = () => {
   const tileLayer = new TileLayer({

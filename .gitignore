@@ -2,7 +2,8 @@
 node_modules
 /dist
 docs/.vitepress/dist
-
+package-lock.json
+yarn.lock
 # local env files
 .env.local
 .env.*.local

@@ -25,6 +25,7 @@ import { register } from 'ol/proj/proj4'
 import proj4 from 'proj4'
 const map1 = ref(null)
 const map2 = ref(null)
+const geojsonUrl = '/geojson/countries.geojson'
 let transformMap
 //定义球形摩尔魏特投影坐标系，对应ESRI的编号为ESRI:53009
 proj4.defs(
@@ -46,7 +47,7 @@ const sphereMollweideProjection = new Projection({
 
 const vectLayer = new VectorLayer({
   source: new VectorSource({
-    url: './countries.geojson',
+    url: geojsonUrl,
     format: new GeoJSON(),
     wrapX: false,
   }),
@@ -97,7 +98,7 @@ const handleProjection = () => {
       layers: [
         new VectorLayer({
           source: new VectorSource({
-            url: './countries.geojson',
+            url: geojsonUrl,
             format: new GeoJSON(),
           }),
         }),

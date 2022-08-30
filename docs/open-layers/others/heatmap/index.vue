@@ -29,7 +29,7 @@ const state = reactive({
 const vector = new Heatmap({
   //矢量数据源（读取本地的KML数据）
   source: new VectorSource({
-    url: './Earthquakes_Mag5.kml',
+    url: '/kml/Earthquakes_Mag5.kml',
     format: new KML({
       extractStyles: false,
     }),

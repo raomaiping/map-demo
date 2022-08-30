@@ -1,7 +1,6 @@
 import { Style, Icon, Text, Fill, Stroke } from 'ol/style'
 import { Overlay } from 'ol'
 import { SHENZHEN, AUTHOR_INFO } from '../../../constants'
-import image from '../../../public/blue.png'
 //示例标注点北京市的信息对象
 export const featuerInfo = {
   geo: SHENZHEN,
@@ -69,7 +68,7 @@ export const createLabelStyle = (feature) =>
         //透明度
         opacity: 0.75,
         //图标的url
-        src: image,
+        src: '/image/blue.png',
       }),
     ),
     text: new Text({

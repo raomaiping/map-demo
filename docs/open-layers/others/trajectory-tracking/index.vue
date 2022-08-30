@@ -145,9 +145,7 @@ function stopAnimation() {
 onMounted(() => {
   initMap()
 
-  fetch(
-    'https://openlayers.org/en/latest/examples/data/polyline/route.json',
-  ).then((response) => {
+  fetch('/json/route.json').then((response) => {
     response.json().then((result) => {
       const polyline = result.routes[0].geometry
 
@@ -195,7 +193,7 @@ onMounted(() => {
         icon: new Style({
           image: new Icon({
             anchor: [0.5, 1],
-            src: 'https://openlayers.org/en/latest/examples/data/icon.png',
+            src: '/image/icon.png',
           }),
         }),
         text: new Style({

@@ -22,7 +22,7 @@ const raster = new TileLayer({
 
 const vector = new VectorLayer({
   source: new VectorSource({
-    url: './2022.kml',
+    url: '/kml/2022.kml',
     format: new KML(),
   }),
 })
