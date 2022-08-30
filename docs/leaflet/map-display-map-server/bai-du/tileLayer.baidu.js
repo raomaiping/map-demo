@@ -4,9 +4,8 @@
 // 引用
 import 'proj4'
 import 'proj4leaflet'
+
 import { ATTRIBUTIONS } from '../../../constants'
-// const titleD = 'http://127.0.0.1:8886/{z}/{x}/{y}.png'
-// const titleD = 'https://api.map.baidu.com/getscript?v=3.0&ak=7pQwLpGQZr0SdQ3vlDp8gu7ExEqjKRG1'
 const titleD =
   'http://online{s}.map.bdimg.com/onlinelabel/?qt=tile&x={x}&y={y}&z={z}&styles='
 

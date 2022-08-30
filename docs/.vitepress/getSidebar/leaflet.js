@@ -35,6 +35,10 @@ export const LeafLet = [
         text: 'Baidu',
         link: '/leaflet/map-display-map-server/bai-du/index.md',
       },
+      {
+        text: '高德地图',
+        link: '/leaflet/map-display-map-server/gao-de/index.md',
+      },
     ],
   },
 ]
