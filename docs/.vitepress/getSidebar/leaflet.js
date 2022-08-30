@@ -66,4 +66,13 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '地图控件',
+    items: [
+      {
+        text: '地图缩放',
+        link: '/leaflet/map-controls/zoom/index.md',
+      },
+    ],
+  },
 ]
