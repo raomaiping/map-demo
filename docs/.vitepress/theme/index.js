@@ -1,7 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
+import L from 'leaflet'
 import 'element-plus/dist/index.css'
 import 'ol/ol.css'
 import 'leaflet/dist/leaflet.css'
+// 修改 leaflet icon 默认路径
+L.Icon.Default.imagePath = '/image/'
 export default {
   ...DefaultTheme,
   enhanceApp: async ({ app, router, siteData, isServer }) => {
