@@ -56,6 +56,10 @@ export const LeafLet = [
         text: 'GeoJSON',
         link: '/leaflet/map-display-map-file/geo-json/index.md',
       },
+      {
+        text: 'KML',
+        link: '/leaflet/map-display-map-file/kml/index.md',
+      },
     ],
   },
 ]

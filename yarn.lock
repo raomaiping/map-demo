@@ -1490,6 +1490,11 @@
     "fetch-jsonp" "^1.0.0"
     "leaflet" "^1.0.0-beta.2"
 
+"leaflet-kml@^1.0.1":
+  "integrity" "sha512-9eL2gb+3aGpzM1YMqX864JYdKmd6Rzdg1KX/lu0dVfZOJtqA44YFh2VS6BFcY6LDnBdnKX0U+88DtPM5s65u5Q=="
+  "resolved" "https://registry.npmjs.org/leaflet-kml/-/leaflet-kml-1.0.1.tgz"
+  "version" "1.0.1"
+
 "leaflet.chinatmsproviders@^3.0.6":
   "integrity" "sha512-B4UPSn2MT//RkFoyrVjwqQyfKuf4tSmMjJDKQ6nqwCCGgirYKRWHafSH9JmA88WoG5pkuMXBcKQhY32FobxU/g=="
   "resolved" "https://registry.npmjs.org/leaflet.chinatmsproviders/-/leaflet.chinatmsproviders-3.0.6.tgz"

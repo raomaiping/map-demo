@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, nextTick } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '../../../constants'
 

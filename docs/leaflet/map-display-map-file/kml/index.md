@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# Baidu
+# KML
 
 ::: tip
-加载百度地图。
+加载 KML 数据
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
@@ -21,6 +21,6 @@ onMounted(()=>{
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-display-map-server/bai-du/index.vue
+<<< @/leaflet/map-display-map-file/kml/index.vue
 
 :::
