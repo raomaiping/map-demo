@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '../../../constants'
 
@@ -30,6 +30,10 @@ const initMap = () => {
   //注册定位失败事件
   map.on('locationerror', (e) => {
     console.log('定位出错=====>', e)
+  })
+  // 销毁地图
+  onUnmounted(() => {
+    map.remove()
   })
 }
 onMounted(() => {

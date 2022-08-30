@@ -19,6 +19,10 @@ export const LeafLet = [
         text: 'OSM',
         link: '/leaflet/map-display-map-server/osm/index.md',
       },
+      {
+        text: 'Bing',
+        link: '/leaflet/map-display-map-server/bing/index.md',
+      },
     ],
   },
 ]

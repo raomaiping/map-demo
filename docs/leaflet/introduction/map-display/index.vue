@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted, nextTick } from 'vue'
 import L from 'leaflet'
 import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '../../../constants'
 
@@ -18,6 +18,10 @@ const initMap = () => {
   }).addTo(map)
   //添加标注
   L.marker(position).addTo(map).bindPopup('您好！深圳').openPopup()
+  // 销毁地图
+  onUnmounted(() => {
+    map.remove()
+  })
 }
 onMounted(() => {
   initMap()

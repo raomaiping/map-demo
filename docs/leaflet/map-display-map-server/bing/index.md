@@ -4,7 +4,7 @@ import Map from './index.vue'
 # OSM
 
 ::: tip
-OSM地图。
+必应地图。
 :::
 
 <Map />
@@ -13,6 +13,6 @@ OSM地图。
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-display-map-server/osm/index.vue
+<<< @/leaflet/map-display-map-server/bing/index.vue
 
 :::

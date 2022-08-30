@@ -5,7 +5,8 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import { ATTRIBUTIONS, SHENZHEN } from '../../../constants'
+import 'leaflet-bing-layer'
+import { SHENZHEN } from '../../../constants'
 
 const initMap = () => {
   const position = SHENZHEN.reverse()
@@ -20,21 +21,15 @@ const initMap = () => {
     //最大显示等级
     maxZoom: 18,
     //当前显示等级
-    zoom: 10,
-    //限制显示地理范围
-    maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
+    zoom: 12,
+    //不添加属性说明控件
+    attributionControl: false,
   })
-  //定义OSM地图，并加载到地图容器中
-  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //最小显示等级
-    minZoom: 1,
-    //最大显示等级
-    maxZoom: 18,
-    //设置地图不连续显示
-    noWrap: true,
-    //设置版权
-    attribution: ATTRIBUTIONS,
-  }).addTo(map)
+  //设置bing地图的key
+  const BING_KEY =
+    'Q57tupj2UBsQNQdju4xL~xBceblfTd6icjljunbuaCw~AhwA-whmGMsfIpVhslZyknWhFYq-GvWJZqBnqV8Zq1uRlI5YM_qr7_hxvdgnU7nH'
+  //加载Bing地图
+  L.tileLayer.bing(BING_KEY).addTo(map)
   // 销毁地图
   onUnmounted(() => {
     map.remove()
