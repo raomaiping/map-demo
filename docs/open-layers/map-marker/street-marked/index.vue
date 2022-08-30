@@ -11,7 +11,7 @@ import { defaults, FullScreen } from 'ol/control'
 import { XYZ, Vector as VectorSource } from 'ol/source'
 import { getCenter } from 'ol/extent'
 import { Fill, Style, Text } from 'ol/style'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 const style = new Style({
   text: new Text({
     font: 'bold 11px "Open Sans", "Arial Unicode MS", "sans-serif"',

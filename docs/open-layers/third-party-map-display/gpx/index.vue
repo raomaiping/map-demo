@@ -12,7 +12,7 @@ import View from 'ol/View'
 import XYZ from 'ol/source/XYZ'
 import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style'
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const raster = new TileLayer({
   source: new XYZ({

@@ -25,7 +25,7 @@ import { Point } from 'ol/geom'
 import { getVectorContext } from 'ol/render'
 import { Style, Stroke, Icon, Text, Fill } from 'ol/style'
 import { VideoPlay, VideoPause } from '@element-plus/icons-vue'
-import { ATTRIBUTIONS, MAPURL } from '../../../constants'
+import { ATTRIBUTIONS, MAPURL } from '/constants'
 const state = reactive({
   speed: 100,
   isPlay: false,

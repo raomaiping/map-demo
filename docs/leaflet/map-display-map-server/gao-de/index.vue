@@ -6,7 +6,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet.chinatmsproviders'
-import { ATTRIBUTIONS, SHENZHEN } from '../../../constants'
+import { ATTRIBUTIONS, SHENZHEN } from '/constants'
 
 const initMap = () => {
   const position = SHENZHEN.reverse()

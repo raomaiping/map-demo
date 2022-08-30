@@ -7,7 +7,7 @@ import { onMounted } from 'vue'
 import { Map, View } from 'ol'
 import { Tile } from 'ol/layer'
 import { XYZ } from 'ol/source'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 
 const arcGISLayers = new Tile({
   source: new XYZ({

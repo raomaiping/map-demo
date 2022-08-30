@@ -5,7 +5,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import { SHENZHEN, ATTRIBUTIONS } from '../../../constants'
+import { SHENZHEN, ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
   const position = SHENZHEN.reverse()

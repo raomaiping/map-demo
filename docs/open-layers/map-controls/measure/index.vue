@@ -32,7 +32,7 @@ import { Tile as TileLayer } from 'ol/layer'
 import { Vector } from 'ol/source'
 import { Polygon, LineString } from 'ol/geom'
 import { unByKey } from 'ol/Observable'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 import XYZ from 'ol/source/XYZ'
 import {
   createHelpTooltip,

@@ -10,7 +10,7 @@ import { XYZ, Vector as VectorSource } from 'ol/source'
 import { Style, Fill, Stroke, Circle } from 'ol/style'
 import { Select, Modify as ModifyInteraction } from 'ol/interaction'
 import { Polygon, Point, LineString } from 'ol/geom'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 //绘制的几何图形要素
 const pointFeature = new Feature(new Point([114.1947, 30.5255]))

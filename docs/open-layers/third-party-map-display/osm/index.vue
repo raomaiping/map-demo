@@ -7,7 +7,7 @@ import { Map, View } from 'ol'
 import { OSM } from 'ol/source'
 import { Tile as TileLayer } from 'ol/layer'
 import { onMounted } from 'vue'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 
 onMounted(() => {
   new Map({

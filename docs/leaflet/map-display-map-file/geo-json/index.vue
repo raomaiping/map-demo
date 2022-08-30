@@ -5,7 +5,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 //创建GeoJSON数据
 const data = [

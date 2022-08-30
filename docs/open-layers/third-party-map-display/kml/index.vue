@@ -10,7 +10,7 @@ import View from 'ol/View'
 import XYZ from 'ol/source/XYZ'
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'
 import { onMounted } from 'vue'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const raster = new TileLayer({
   source: new XYZ({

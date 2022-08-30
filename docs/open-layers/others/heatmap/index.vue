@@ -20,7 +20,7 @@ import { Tile as TileLayer, Heatmap } from 'ol/layer'
 import { defaults, FullScreen } from 'ol/control'
 import { XYZ, Vector as VectorSource } from 'ol/source'
 import { KML } from 'ol/format'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 const state = reactive({
   radiusSize: 10,
   blurSize: 15,

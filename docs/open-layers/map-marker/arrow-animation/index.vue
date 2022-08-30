@@ -15,7 +15,7 @@ import Feature from 'ol/Feature'
 import GeoJSON from 'ol/format/GeoJSON'
 import { getVectorContext } from 'ol/render'
 import { Style, Icon } from 'ol/style'
-import { ATTRIBUTIONS, MAPURL } from '../../../constants'
+import { ATTRIBUTIONS, MAPURL } from '/constants'
 import {
   textStyle,
   buttomPathStyle,
@@ -27,8 +27,8 @@ import {
   fmidStyle,
   finnerStyle,
 } from './styles'
-import soul from '../../../public/json/soul.json'
-import arrow from '../../../public/image/arrow.png'
+import soul from '/public/json/soul.json'
+import arrow from '/image/arrow.png'
 
 const initMap = () => {
   const tileLayer = new TileLayer({

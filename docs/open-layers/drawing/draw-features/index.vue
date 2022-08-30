@@ -22,7 +22,7 @@ import { Style, Fill, Stroke, Circle } from 'ol/style'
 import { Draw } from 'ol/interaction'
 import { createRegularPolygon } from 'ol/interaction/Draw'
 import { Polygon } from 'ol/geom'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 let map = null
 let draw = null // 绘制对象

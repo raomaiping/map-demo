@@ -11,7 +11,7 @@ import { MousePosition, defaults } from 'ol/control'
 import { createStringXY } from 'ol/coordinate'
 import { Tile as TileLayer } from 'ol/layer'
 import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 const raster = new TileLayer({
   source: new XYZ({
     attributions: ATTRIBUTIONS,

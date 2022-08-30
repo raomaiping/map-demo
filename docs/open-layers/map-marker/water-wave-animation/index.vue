@@ -13,7 +13,7 @@ import { XYZ, Vector as VectorSource } from 'ol/source'
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'
 import { easeOut } from 'ol/easing'
 import { getVectorContext } from 'ol/render'
-import { ATTRIBUTIONS, MAPURL, SHENZHEN, FUZHOU } from '../../../constants'
+import { ATTRIBUTIONS, MAPURL, SHENZHEN, FUZHOU } from '/constants'
 import { addVectorLabel } from './tools'
 
 const initMap = () => {

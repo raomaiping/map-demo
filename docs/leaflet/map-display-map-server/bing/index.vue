@@ -6,7 +6,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet-bing-layer'
-import { SHENZHEN } from '../../../constants'
+import { SHENZHEN } from '/constants'
 
 const initMap = () => {
   const position = SHENZHEN.reverse()

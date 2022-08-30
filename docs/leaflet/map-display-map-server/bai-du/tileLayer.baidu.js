@@ -5,7 +5,7 @@
 import 'proj4'
 import 'proj4leaflet'
 
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 const titleD =
   'http://online{s}.map.bdimg.com/onlinelabel/?qt=tile&x={x}&y={y}&z={z}&styles='
 

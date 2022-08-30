@@ -13,7 +13,7 @@ import { Projection } from 'ol/proj'
 import { Image } from 'ol/layer'
 import { ImageStatic } from 'ol/source'
 import { getCenter } from 'ol/extent'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 
 // 单张图片的矢量图层
 const map = ref(null)

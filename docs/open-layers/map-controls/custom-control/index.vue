@@ -8,7 +8,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { defaults, Control } from 'ol/control'
 import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 class RotateNorthControl extends Control {
   /**

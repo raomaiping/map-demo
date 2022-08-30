@@ -8,7 +8,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { ScaleLine, defaults } from 'ol/control'
 import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const raster = new TileLayer({
   source: new XYZ({

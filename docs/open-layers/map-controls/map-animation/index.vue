@@ -15,7 +15,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { fromLonLat } from 'ol/proj'
 import { easeIn, easeOut } from 'ol/easing'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 import XYZ from 'ol/source/XYZ'
 
 const raster = new TileLayer({

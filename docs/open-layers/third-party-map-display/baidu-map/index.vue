@@ -9,7 +9,7 @@ import { Tile as TileLayer } from 'ol/layer'
 import { onMounted } from 'vue'
 import { get } from 'ol/proj'
 import TileGrid from 'ol/tilegrid/TileGrid'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 //坐标参考系
 const projection = get('EPSG:3857')
 //分辨率

@@ -17,7 +17,7 @@ import { XYZ, Vector as VectorSource } from 'ol/source'
 import { Point } from 'ol/geom'
 import { ElMessage } from 'element-plus'
 import { createLabelStyle, addVectorLabel } from './tools'
-import { ATTRIBUTIONS, SHENZHEN, MAPURL } from '../../../constants'
+import { ATTRIBUTIONS, SHENZHEN, MAPURL } from '/constants'
 
 const state = reactive({
   input: '',

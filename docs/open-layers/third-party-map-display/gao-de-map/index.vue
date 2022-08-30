@@ -7,7 +7,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { onMounted } from 'vue'
 import { XYZ } from 'ol/source'
-import { ATTRIBUTIONS, SHENZHEN } from '../../../constants'
+import { ATTRIBUTIONS, SHENZHEN } from '/constants'
 
 const raster = new TileLayer({
   title: '高德地图',

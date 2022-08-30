@@ -7,7 +7,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { onMounted } from 'vue'
 import { XYZ } from 'ol/source'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 
 const raster = new TileLayer({
   title: '谷歌地图',

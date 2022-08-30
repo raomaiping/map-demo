@@ -6,7 +6,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet-kml'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
   //地图容器

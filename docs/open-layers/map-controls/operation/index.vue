@@ -15,7 +15,7 @@ import { Map, View } from 'ol'
 import { defaults, ZoomToExtent } from 'ol/control'
 import { Tile as TileLayer } from 'ol/layer'
 import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '../../../constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 let map
 //地图视图的初始参数
 let view

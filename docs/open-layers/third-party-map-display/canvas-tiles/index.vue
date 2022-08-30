@@ -7,7 +7,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { onMounted } from 'vue'
 import { XYZ, TileDebug } from 'ol/source'
-import { ATTRIBUTIONS, MAPURL } from '../../../constants'
+import { ATTRIBUTIONS, MAPURL } from '/constants'
 
 //实例化图层数据源对象
 const TiandituSource = new XYZ({

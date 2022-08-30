@@ -27,7 +27,7 @@ import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'
 import { defaults, FullScreen } from 'ol/control'
 import { XYZ, Vector as VectorSource } from 'ol/source'
 import { Point } from 'ol/geom'
-import { ATTRIBUTIONS, SHENZHEN, MAPURL, NANCHANG } from '../../../constants'
+import { ATTRIBUTIONS, SHENZHEN, MAPURL, NANCHANG } from '/constants'
 import { ElMessage } from 'element-plus'
 import { createLabelStyle, addVectorLabel, addOverlayLabel } from './tools'
 

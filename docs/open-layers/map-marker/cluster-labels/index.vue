@@ -12,7 +12,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer } from 'ol/layer'
 import { defaults, FullScreen } from 'ol/control'
 import { XYZ } from 'ol/source'
-import { ATTRIBUTIONS, MAPURL } from '../../../constants'
+import { ATTRIBUTIONS, MAPURL } from '/constants'
 import { addClusterLabels, removeClusterLabels, clusters } from './clusters'
 let map = null
 const raster = new TileLayer({

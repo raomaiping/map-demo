@@ -8,7 +8,7 @@ import { Map, View } from 'ol'
 import { Tile } from 'ol/layer'
 import { XYZ } from 'ol/source'
 import { fromLonLat } from 'ol/proj'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
   //设置地图容器放置位置

@@ -1,6 +1,6 @@
 import { Style, Icon, Text, Fill, Stroke } from 'ol/style'
 import { Overlay } from 'ol'
-import { SHENZHEN, AUTHOR_INFO } from '../../../constants'
+import { SHENZHEN, AUTHOR_INFO } from '/constants'
 //示例标注点北京市的信息对象
 export const featuerInfo = {
   geo: SHENZHEN,

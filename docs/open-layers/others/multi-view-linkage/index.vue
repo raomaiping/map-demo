@@ -15,7 +15,7 @@ import { Map, View } from 'ol'
 import { Tile as TileLayer, WebGLTile } from 'ol/layer'
 import { defaults, FullScreen } from 'ol/control'
 import { XYZ } from 'ol/source'
-import { ATTRIBUTIONS } from '../../../constants'
+import { ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
   //加载canvas渲染模式的地图做为主图,默认是canvas渲染模式
