@@ -23,6 +23,10 @@ export const LeafLet = [
         text: 'Bing',
         link: '/leaflet/map-display-map-server/bing/index.md',
       },
+      {
+        text: 'Google',
+        link: '/leaflet/map-display-map-server/google/index.md',
+      },
     ],
   },
 ]

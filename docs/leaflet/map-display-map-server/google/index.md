@@ -1,10 +1,10 @@
 <script setup>
 import Map from './index.vue'
 </script>
-# Bing
+# Google
 
 ::: tip
-必应地图。
+谷歌地图。
 :::
 
 <Map />
@@ -13,6 +13,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-display-map-server/bing/index.vue
+<<< @/leaflet/map-display-map-server/google/index.vue
 
 :::
