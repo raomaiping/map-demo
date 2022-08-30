@@ -1,0 +1,49 @@
+<template>
+  <div id="map"></div>
+</template>
+
+<script setup>
+import { onMounted, onUnmounted } from 'vue'
+import L from 'leaflet'
+import { ATTRIBUTIONS, SHENZHEN } from '../../../constants'
+
+const initMap = () => {
+  const position = SHENZHEN.reverse()
+  //地图容器
+  const map = L.map('map', {
+    //参考坐标系
+    crs: L.CRS.EPSG3857,
+    //显示中心
+    center: position,
+    //最小显示等级
+    minZoom: 1,
+    //最大显示等级
+    maxZoom: 18,
+    //当前显示等级
+    zoom: 12,
+  })
+  //添加ArcGIS瓦片到地图容器中
+  L.tileLayer(
+    'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png',
+    {
+      noWrap: true,
+      //设置版权
+      attribution: ATTRIBUTIONS,
+    },
+  ).addTo(map)
+  // 销毁地图
+  onUnmounted(() => {
+    map.remove()
+  })
+}
+onMounted(() => {
+  initMap()
+})
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+#map {
+  height: 650px;
+}
+</style>

@@ -39,6 +39,14 @@ export const LeafLet = [
         text: '高德地图',
         link: '/leaflet/map-display-map-server/gao-de/index.md',
       },
+      {
+        text: '智图',
+        link: '/leaflet/map-display-map-server/zhi-map/index.md',
+      },
+      {
+        text: 'ArcGIS瓦片地图',
+        link: '/leaflet/map-display-map-server/arc-gis/index.md',
+      },
     ],
   },
 ]
