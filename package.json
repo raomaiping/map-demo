@@ -17,6 +17,7 @@
     "element-plus": "^2.2.13",
     "leaflet": "^1.8.0",
     "leaflet-bing-layer": "^3.3.1",
+    "leaflet-gpx": "^1.7.0",
     "leaflet-kml": "^1.0.1",
     "leaflet.chinatmsproviders": "^3.0.6",
     "ol": "^6.15.1",

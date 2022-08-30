@@ -60,6 +60,10 @@ export const LeafLet = [
         text: 'KML',
         link: '/leaflet/map-display-map-file/kml/index.md',
       },
+      {
+        text: 'GPX',
+        link: '/leaflet/map-display-map-file/gpx/index.md',
+      },
     ],
   },
 ]
