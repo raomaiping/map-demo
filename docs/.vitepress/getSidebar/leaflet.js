@@ -49,4 +49,13 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '地图显示-地图文件',
+    items: [
+      {
+        text: 'GeoJSON',
+        link: '/leaflet/map-display-map-file/geo-json/index.md',
+      },
+    ],
+  },
 ]
