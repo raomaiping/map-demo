@@ -1,12 +1,12 @@
 # Map
 
-通过openlayer渲染地图，并实现功能交互。
+通过 `openlayer` 或者 `leaflet` 渲染地图，并实现功能交互。
 
 本文档基于 [VitePress](https://vitepress.vuejs.org/) 构建
 
 # 技术栈
 
-vue3 + openlayers
+vue3 + openlayers + leaflet 
 # 运行 
 
 yarn docs:dev
