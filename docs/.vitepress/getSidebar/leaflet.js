@@ -31,6 +31,10 @@ export const LeafLet = [
         text: '天地图',
         link: '/leaflet/map-display-map-server/tian-di-tu/index.md',
       },
+      {
+        text: 'Baidu',
+        link: '/leaflet/map-display-map-server/bai-du/index.md',
+      },
     ],
   },
 ]
