@@ -3,6 +3,7 @@ import L from 'leaflet'
 import 'element-plus/dist/index.css'
 import 'ol/ol.css'
 import 'leaflet/dist/leaflet.css'
+import './style.css'
 // 修改 leaflet icon 默认路径
 L.Icon.Default.imagePath = '/image/'
 export default {
