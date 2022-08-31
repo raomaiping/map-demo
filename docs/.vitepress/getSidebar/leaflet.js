@@ -122,6 +122,10 @@ export const LeafLet = [
         text: '地图域当前信息',
         link: '/leaflet/map-operation/view-window-position/index.md',
       },
+      {
+        text: '图层探查',
+        link: '/leaflet/map-operation/layer-search/index.md',
+      },
     ],
   },
 ]

@@ -1580,6 +1580,11 @@
   dependencies:
     "screenfull" "^6.0.1"
 
+"leaflet.magnifyingglass@^1.0.0":
+  "integrity" "sha512-/BBkQ6jmOcPMQp+70FK3faqnL6X0EAVL/XosI0+8+JERhOv2Psx5ZQtYoBoONHcYhBQxmM81p4OiEB7oiRNb0A=="
+  "resolved" "https://registry.npmjs.org/leaflet.magnifyingglass/-/leaflet.magnifyingglass-1.0.0.tgz"
+  "version" "1.0.0"
+
 "leaflet@^1.0.0", "leaflet@^1.0.0-beta.2", "leaflet@^1.8.0", "leaflet@x":
   "integrity" "sha512-gwhMjFCQiYs3x/Sf+d49f10ERXaEFCPr+nVTryhAW8DWbMGqJqt9G4XuIaHmFW08zYvhgdzqXGr8AlW8v8dQkA=="
   "resolved" "https://registry.npmjs.org/leaflet/-/leaflet-1.8.0.tgz"

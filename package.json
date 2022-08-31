@@ -25,6 +25,7 @@
     "leaflet-nav": "^1.0.3",
     "leaflet.chinatmsproviders": "^3.0.6",
     "leaflet.fullscreen2": "^1.0.0",
+    "leaflet.magnifyingglass": "^1.0.0",
     "ol": "^6.15.1",
     "proj4": "^2.8.0",
     "proj4leaflet": "^1.0.2"
