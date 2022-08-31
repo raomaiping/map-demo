@@ -51,6 +51,7 @@ const initMap = () => {
   )
   //创建鹰眼控件
   const miniMap = new MiniMap(minmapLayer, { toggleDisplay: true })
+  //加载鹰眼控件
   map.addControl(miniMap)
   // 销毁地图
   onUnmounted(() => {
