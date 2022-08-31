@@ -1500,6 +1500,11 @@
   "resolved" "https://registry.npmjs.org/leaflet-kml/-/leaflet-kml-1.0.1.tgz"
   "version" "1.0.1"
 
+"leaflet-minimap@^3.6.1":
+  "integrity" "sha512-6px8f6cfv1rKB6ACpL6bbUFGxipZOq4KsntJgBj9nOcW1RYa5+xFp8emOZwks9X+VtVVsQEwWwfgT1kTTL/LzA=="
+  "resolved" "https://registry.npmjs.org/leaflet-minimap/-/leaflet-minimap-3.6.1.tgz"
+  "version" "3.6.1"
+
 "leaflet-nav@^1.0.3":
   "integrity" "sha512-0PmK4Khb1MY1yZQk4wal0+pkvWWAGCUK8vXu+8FjttF3qq+D3Sktd8qus6DMvqVvte9pnqKHvWE2JqdhG6by7A=="
   "resolved" "https://registry.npmjs.org/leaflet-nav/-/leaflet-nav-1.0.3.tgz"

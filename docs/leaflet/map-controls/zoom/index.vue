@@ -10,7 +10,6 @@ import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '/constants'
 const initMap = () => {
   const position = SHENZHEN.reverse()
   //地图容器
-  //地图容器
   const map = L.map('map', {
     zoomControl: false,
     //参考坐标系

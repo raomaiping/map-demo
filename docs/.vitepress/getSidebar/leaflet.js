@@ -85,6 +85,10 @@ export const LeafLet = [
         text: '比例尺',
         link: '/leaflet/map-controls/scale-line/index.md',
       },
+      {
+        text: '鹰眼',
+        link: '/leaflet/map-controls/mini-map/index.md',
+      },
     ],
   },
 ]
