@@ -118,6 +118,10 @@ export const LeafLet = [
         text: '地图显示级数',
         link: '/leaflet/map-operation/set-view-zoom/index.md',
       },
+      {
+        text: '地图域当前信息',
+        link: '/leaflet/map-operation/view-window-position/index.md',
+      },
     ],
   },
 ]
