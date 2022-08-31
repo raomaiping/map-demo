@@ -5,7 +5,6 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import MiniMap from 'leaflet-minimap'
 import { ATTRIBUTIONS, SHENZHEN } from '/constants'
 
 const initMap = () => {
@@ -27,32 +26,39 @@ const initMap = () => {
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
   })
 
-  //加载天地图矢量图层
-  L.tileLayer(
+  //天地图矢量图层
+  const vecLayer = L.tileLayer(
     'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
     { noWrap: true, attribution: ATTRIBUTIONS },
-  ).addTo(map)
-  //加载天地图矢量注记图层
-  L.tileLayer(
+  )
+  //天地图矢量注记图层
+  const cvaLayer = L.tileLayer(
     'http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
     { noWrap: true, attribution: ATTRIBUTIONS },
-  ).addTo(map)
-  //定义鹰眼图层（用于加载到鹰眼控件中）
-  const minmapLayer = new L.TileLayer(
-    'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
-    {
-      //最小显示等级
-      minZoom: 1,
-      //最大显示等级
-      maxZoom: 18,
-      //设置地图不连续显示
-      noWrap: true,
-    },
   )
-  //创建鹰眼控件
-  const miniMap = new MiniMap(minmapLayer, { toggleDisplay: true })
-  //加载鹰眼控件
-  map.addControl(miniMap)
+  //天地图影像图层
+  const imgLayer = L.tileLayer(
+    'http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    { noWrap: true, attribution: ATTRIBUTIONS },
+  )
+  //天地图影像注记图层
+  const ciaLayer = L.tileLayer(
+    'http://t0.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    { noWrap: true, attribution: ATTRIBUTIONS },
+  )
+  //矢量图层组
+  const vecLayerGroup = L.layerGroup([vecLayer, cvaLayer])
+  //影像图层组
+  const imgLayerGroup = L.layerGroup([imgLayer, ciaLayer])
+  //设置图层组
+  const baseLayers = {
+    天地图矢量: vecLayerGroup,
+    天地图影像: imgLayerGroup,
+  }
+  //初始时加载矢量图层组
+  map.addLayer(vecLayerGroup)
+  //添加图层组控件
+  L.control.layers(baseLayers).addTo(map)
   // 销毁地图
   onUnmounted(() => {
     map.remove()

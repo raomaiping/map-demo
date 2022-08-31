@@ -89,6 +89,10 @@ export const LeafLet = [
         text: '鹰眼',
         link: '/leaflet/map-controls/mini-map/index.md',
       },
+      {
+        text: '图层管理',
+        link: '/leaflet/map-controls/layer-control/index.md',
+      },
     ],
   },
 ]
