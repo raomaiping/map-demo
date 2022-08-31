@@ -5,8 +5,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import 'leaflet-measure/dist/leaflet-measure.cn'
-import 'leaflet-measure/dist/leaflet-measure.css'
+import AutoGraticule from 'leaflet-auto-graticule'
 import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '/constants'
 
 const initMap = () => {
@@ -26,15 +25,14 @@ const initMap = () => {
     zoom: 10,
     //限制显示地理范围
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
-    // 加载测量控件
-    measureControl: true,
   })
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
   }).addTo(map)
-
+  // 添加地图网格
+  new AutoGraticule().addTo(map)
   // 销毁地图
   onUnmounted(() => {
     map.remove()
@@ -49,8 +47,6 @@ onMounted(() => {
 <style scoped>
 #map {
   height: 650px;
-}
-:deep(.leaflet-control-measure) {
   color: #3a3a3a;
 }
 </style>

@@ -101,6 +101,10 @@ export const LeafLet = [
         text: '测量',
         link: '/leaflet/map-controls/measure/index.md',
       },
+      {
+        text: '网格',
+        link: '/leaflet/map-controls/graticule/index.md',
+      },
     ],
   },
 ]
