@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 自定义地图缩放控件
+# 自定义地图缩放
 
 ::: tip
-自定义地图缩放控件。
+加载自定义地图缩放控件。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>

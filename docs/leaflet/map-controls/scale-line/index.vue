@@ -5,7 +5,6 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import 'leaflet-nav'
 import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '/constants'
 
 const initMap = () => {
@@ -33,14 +32,10 @@ const initMap = () => {
     attribution: ATTRIBUTIONS,
   }).addTo(map)
 
-  //定义导航控件，并添加到地图容器中
-  L.control
-    .navbar({
-      forwardTitle: '前进',
-      backTitle: '后退',
-      homeTitle: '回到地图初始位置',
-    })
-    .addTo(map)
+  //定义一个比例尺控件
+  const scale = L.control.scale()
+  //将比例尺加载到地图容器中
+  map.addControl(scale)
   // 销毁地图
   onUnmounted(() => {
     map.remove()
@@ -55,28 +50,5 @@ onMounted(() => {
 <style scoped>
 #map {
   height: 650px;
-}
-:deep(.leaflet-control-navbar-fwd) {
-  background-image: url('/image/arrow-right_000000_14.png');
-}
-
-:deep(.leaflet-control-navbar-back) {
-  background-image: url('/image/arrow-left_000000_14.png');
-}
-
-:deep(.leaflet-control-navbar-home) {
-  background-image: url('/image/home_000000_14.png');
-}
-
-:deep(.leaflet-control-navbar-fwd-disabled) {
-  background-image: url('/image/arrow-right_bbbbbb_14.png');
-}
-
-:deep(.leaflet-control-navbar-back-disabled) {
-  background-image: url('/image/arrow-left_bbbbbb_14.png');
-}
-
-:deep(.leaflet-control-navbar-home-disabled) {
-  background-image: url('/image/home_bbbbbb_14.png');
 }
 </style>

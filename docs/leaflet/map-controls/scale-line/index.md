@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 地图缩放
+# 比例尺
 
 ::: tip
-加载地图缩放控件。
+加载比例尺控件。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
@@ -21,6 +21,6 @@ onMounted(()=>{
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-controls/zoom/index.vue
+<<< @/leaflet/map-controls/scale-line/index.vue
 
 :::

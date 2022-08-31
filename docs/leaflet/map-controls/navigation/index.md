@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 导航控件
+# 导航
 
 ::: tip
-导航控件。
+加载导航控件。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
