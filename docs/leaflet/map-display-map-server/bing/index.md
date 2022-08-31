@@ -24,3 +24,6 @@ onMounted(()=>{
 <<< @/leaflet/map-display-map-server/bing/index.vue
 
 :::
+
+## 参考文档:
+[leaflet-bing-layer](https://github.com/digidem/leaflet-bing-layer)

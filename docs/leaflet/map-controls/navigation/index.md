@@ -24,3 +24,6 @@ onMounted(()=>{
 <<< @/leaflet/map-controls/navigation/index.vue
 
 :::
+
+## 参考文档:
+[leaflet-nav](https://www.npmjs.com/package/leaflet-nav)

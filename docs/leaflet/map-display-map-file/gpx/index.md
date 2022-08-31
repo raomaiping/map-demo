@@ -24,3 +24,6 @@ onMounted(()=>{
 <<< @/leaflet/map-display-map-file/gpx/index.vue
 
 :::
+
+## 参考文档:
+[leaflet-gpx](https://github.com/mpetazzoni/leaflet-gpx)

@@ -24,3 +24,6 @@ onMounted(()=>{
 <<< @/leaflet/map-controls/mini-map/index.vue
 
 :::
+
+## 参考文档:
+[leaflet-minimap](https://github.com/Norkart/Leaflet-MiniMap)

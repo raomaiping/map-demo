@@ -1515,7 +1515,14 @@
   "resolved" "https://registry.npmjs.org/leaflet.chinatmsproviders/-/leaflet.chinatmsproviders-3.0.6.tgz"
   "version" "3.0.6"
 
-"leaflet@^1.0.0-beta.2", "leaflet@^1.8.0":
+"leaflet.fullscreen2@^1.0.0":
+  "integrity" "sha512-wEfDtCjF4gLLctvH/LzrTybuWsJWj88M0JHLdRcRl2ORxOvDRs5fborO2Vl+3xES+JUYGsj6JlACdBdjUiRqvQ=="
+  "resolved" "https://registry.npmjs.org/leaflet.fullscreen2/-/leaflet.fullscreen2-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "screenfull" "^6.0.1"
+
+"leaflet@^1.0.0", "leaflet@^1.0.0-beta.2", "leaflet@^1.8.0":
   "integrity" "sha512-gwhMjFCQiYs3x/Sf+d49f10ERXaEFCPr+nVTryhAW8DWbMGqJqt9G4XuIaHmFW08zYvhgdzqXGr8AlW8v8dQkA=="
   "resolved" "https://registry.npmjs.org/leaflet/-/leaflet-1.8.0.tgz"
   "version" "1.8.0"
@@ -2074,6 +2081,11 @@
   "version" "0.23.0"
   dependencies:
     "loose-envify" "^1.1.0"
+
+"screenfull@^6.0.1":
+  "integrity" "sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw=="
+  "resolved" "https://registry.npmjs.org/screenfull/-/screenfull-6.0.2.tgz"
+  "version" "6.0.2"
 
 "sha.js@^2.4.0", "sha.js@^2.4.8":
   "integrity" "sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ=="

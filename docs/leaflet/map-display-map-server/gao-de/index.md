@@ -24,3 +24,6 @@ onMounted(()=>{
 <<< @/leaflet/map-display-map-server/gao-de/index.vue
 
 :::
+
+## 参考文档:
+[leaflet.chinatmsproviders](https://github.com/htoooth/Leaflet.ChineseTmsProviders)

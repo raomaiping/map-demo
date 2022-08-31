@@ -24,3 +24,6 @@ onMounted(()=>{
 <<< @/leaflet/map-display-map-file/kml/index.vue
 
 :::
+
+## 参考文档:
+[leaflet-kml](https://github.com/windycom/leaflet-kml)

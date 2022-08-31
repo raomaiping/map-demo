@@ -93,6 +93,10 @@ export const LeafLet = [
         text: '图层管理',
         link: '/leaflet/map-controls/layer-control/index.md',
       },
+      {
+        text: '全屏',
+        link: '/leaflet/map-controls/fullscreen/index.md',
+      },
     ],
   },
 ]

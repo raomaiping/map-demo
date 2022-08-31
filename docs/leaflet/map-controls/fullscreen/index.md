@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 智图
+# 全屏
 
 ::: tip
-加载智图。
+加载全屏控件。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
@@ -21,9 +21,9 @@ onMounted(()=>{
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-display-map-server/zhi-map/index.vue
+<<< @/leaflet/map-controls/fullscreen/index.vue
 
 :::
 
 ## 参考文档:
-[leaflet.chinatmsproviders](https://github.com/htoooth/Leaflet.ChineseTmsProviders)
+[leaflet.fullscreen2](https://github.com/brunob/leaflet.fullscreen)
