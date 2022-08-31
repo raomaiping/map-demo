@@ -107,4 +107,17 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '地图操作',
+    items: [
+      {
+        text: '地图定位',
+        link: '/leaflet/map-operation/map-orientation/index.md',
+      },
+      {
+        text: '地图显示级数',
+        link: '/leaflet/map-operation/set-view-zoom/index.md',
+      },
+    ],
+  },
 ]
