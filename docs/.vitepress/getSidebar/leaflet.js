@@ -97,6 +97,10 @@ export const LeafLet = [
         text: '全屏',
         link: '/leaflet/map-controls/fullscreen/index.md',
       },
+      {
+        text: '测量',
+        link: '/leaflet/map-controls/measure/index.md',
+      },
     ],
   },
 ]
