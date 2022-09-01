@@ -3,15 +3,12 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, reactive } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet.magnifyingglass/leaflet.magnifyingglass'
 import 'leaflet.magnifyingglass/leaflet.magnifyingglass.css'
-import { ATTRIBUTIONS, SHENZHEN, FUZHOU } from '/constants'
-const form = reactive({
-  longitude: FUZHOU[0],
-  latitude: FUZHOU[1],
-})
+import { ATTRIBUTIONS, SHENZHEN } from '/constants'
+
 let map = null
 const position = SHENZHEN.reverse()
 const initMap = () => {

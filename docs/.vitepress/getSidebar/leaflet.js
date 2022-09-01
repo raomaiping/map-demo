@@ -126,6 +126,10 @@ export const LeafLet = [
         text: '图层探查',
         link: '/leaflet/map-operation/layer-search/index.md',
       },
+      {
+        text: '图层组和图层控制',
+        link: '/leaflet/map-operation/layer-group-control/index.md',
+      },
     ],
   },
 ]
