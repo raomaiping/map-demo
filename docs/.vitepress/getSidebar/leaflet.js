@@ -134,6 +134,10 @@ export const LeafLet = [
         text: '图层层级控制',
         link: '/leaflet/map-operation/layer-control/index.md',
       },
+      {
+        text: '导出图片',
+        link: '/leaflet/map-operation/export-image/index.md',
+      },
     ],
   },
 ]

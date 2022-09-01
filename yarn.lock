@@ -937,6 +937,11 @@
     "miller-rabin" "^4.0.0"
     "randombytes" "^2.0.0"
 
+"dom-to-image@^2.6.0":
+  "integrity" "sha512-Dt0QdaHmLpjURjU7Tnu3AgYSF2LuOmksSGsUcE6ItvJoCWTBEmiMXcqBdNSAm9+QbbwD7JMoVsuuKX6ZVQv1qA=="
+  "resolved" "https://registry.npmjs.org/dom-to-image/-/dom-to-image-2.6.0.tgz"
+  "version" "2.6.0"
+
 "domain-browser@^1.2.0":
   "integrity" "sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA=="
   "resolved" "https://registry.npmjs.org/domain-browser/-/domain-browser-1.2.0.tgz"
@@ -1567,6 +1572,11 @@
   "integrity" "sha512-0PmK4Khb1MY1yZQk4wal0+pkvWWAGCUK8vXu+8FjttF3qq+D3Sktd8qus6DMvqVvte9pnqKHvWE2JqdhG6by7A=="
   "resolved" "https://registry.npmjs.org/leaflet-nav/-/leaflet-nav-1.0.3.tgz"
   "version" "1.0.3"
+
+"leaflet.browser.print@^2.0.2":
+  "integrity" "sha512-/gE9sF35OwKdkaD13LJf3Jxh1yNFPN6BqNtf7qsMKzvbWLwkRsiBTmOY8d4hhAS3JoWfEPavW/QCURKbT2HuUg=="
+  "resolved" "https://registry.npmjs.org/leaflet.browser.print/-/leaflet.browser.print-2.0.2.tgz"
+  "version" "2.0.2"
 
 "leaflet.chinatmsproviders@^3.0.6":
   "integrity" "sha512-B4UPSn2MT//RkFoyrVjwqQyfKuf4tSmMjJDKQ6nqwCCGgirYKRWHafSH9JmA88WoG5pkuMXBcKQhY32FobxU/g=="

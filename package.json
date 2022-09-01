@@ -14,6 +14,7 @@
     "vitepress": "^1.0.0-alpha.4"
   },
   "dependencies": {
+    "dom-to-image": "^2.6.0",
     "element-plus": "^2.2.13",
     "leaflet": "^1.8.0",
     "leaflet-auto-graticule": "^1.1.0",
@@ -23,6 +24,7 @@
     "leaflet-measure": "^3.1.0",
     "leaflet-minimap": "^3.6.1",
     "leaflet-nav": "^1.0.3",
+    "leaflet.browser.print": "^2.0.2",
     "leaflet.chinatmsproviders": "^3.0.6",
     "leaflet.fullscreen2": "^1.0.0",
     "leaflet.magnifyingglass": "^1.0.0",
