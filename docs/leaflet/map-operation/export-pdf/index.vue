@@ -6,7 +6,6 @@
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet.browser.print/dist/leaflet.browser.print'
-import domtoimage from 'dom-to-image';
 import { MAPURL, ATTRIBUTIONS } from '/constants'
 let map = null
 const initMap = () => {
@@ -25,22 +24,14 @@ const initMap = () => {
     attribution: ATTRIBUTIONS,
     crossOrigin: "anonymous"
   }).addTo(map)
-  const saveAsImage = function () {
-    return domtoimage.toPng(document.getElementById('map-print'))
-      .then(function (dataUrl) {
-        const link = document.createElement('a');
-        link.download = "地图.png";
-        link.href = dataUrl;
-        link.click();
-      });
-  }
-  // 加载导出图片控件
+  // 加载导出pdf控件
   L.control.browserPrint({
-    title: '导出PNG地图',
+    title: '导出PDF地图',
+    documentTitle: "printPdf",
     printModes: [
-      L.BrowserPrint.Mode.Auto("Download PNG"),
+      L.BrowserPrint.Mode.Landscape("Tabloid", { title: "导出" }),
+      L.BrowserPrint.Mode.Custom("B5", { title: "选择区域" })
     ],
-    printFunction: saveAsImage
   }).addTo(map);
 
   // 销毁地图

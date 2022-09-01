@@ -3,21 +3,20 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
-import L from 'leaflet'
-import 'leaflet-measure/dist/leaflet-measure.cn'
-import 'leaflet-measure/dist/leaflet-measure.css'
-import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '/constants'
+import { onMounted, onUnmounted } from "vue";
+import L from "leaflet";
+import "leaflet-measure/dist/leaflet-measure.cn";
+import "leaflet-measure/dist/leaflet-measure.css";
+import { MAPURL, ATTRIBUTIONS } from "/constants";
 
 const initMap = () => {
-  const position = SHENZHEN.reverse()
   //地图容器
-  const map = L.map('map', {
+  const map = L.map("map", {
     zoomControl: false,
     //参考坐标系
     crs: L.CRS.EPSG3857,
     //显示中心
-    center: position,
+    center: [22.548857, 114.064839],
     //最小显示等级
     minZoom: 1,
     //最大显示等级
@@ -28,21 +27,21 @@ const initMap = () => {
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
     // 加载测量控件
     measureControl: true,
-  })
+  });
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map)
+  }).addTo(map);
 
   // 销毁地图
   onUnmounted(() => {
-    map.remove()
-  })
-}
+    map.remove();
+  });
+};
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

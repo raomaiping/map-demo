@@ -17,24 +17,23 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, reactive } from 'vue'
-import L from 'leaflet'
-import { ElMessage } from 'element-plus'
-import { MAPURL, ATTRIBUTIONS, SHENZHEN, FUZHOU } from '/constants'
+import { onMounted, onUnmounted, reactive } from "vue";
+import L from "leaflet";
+import { ElMessage } from "element-plus";
+import { MAPURL, ATTRIBUTIONS, FUZHOU } from "/constants";
 const form = reactive({
   longitude: FUZHOU[0],
   latitude: FUZHOU[1],
-})
-let map = null
-const position = SHENZHEN.reverse()
+});
+let map = null;
 const initMap = () => {
   //地图容器
-  map = L.map('map', {
+  map = L.map("map", {
     zoomControl: false,
     //参考坐标系
     crs: L.CRS.EPSG3857,
     //显示中心
-    center: position,
+    center: [22.548857, 114.064839],
     //最小显示等级
     minZoom: 1,
     //最大显示等级
@@ -43,42 +42,42 @@ const initMap = () => {
     zoom: 10,
     //限制显示地理范围
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
-  })
+  });
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map)
+  }).addTo(map);
   // 销毁地图
   onUnmounted(() => {
-    map.remove()
-  })
-}
+    map.remove();
+  });
+};
 
 // 平移到抚州
 const onMoveto = () => {
   //获取文本框中输入的经度坐标和纬度坐标
-  const { longitude, latitude } = form
+  const { longitude, latitude } = form;
   if (!longitude || !latitude) {
     ElMessage({
-      message: '请输入经度和纬度坐标',
-      type: 'error',
-    })
+      message: "请输入经度和纬度坐标",
+      type: "error",
+    });
   }
   //注意leaflet是用纬经度来表示位置
-  const coordinate = [+latitude, +longitude]
+  const coordinate = [+latitude, +longitude];
   //平移视图位置，并设置显示级数
-  map.setView(coordinate, map.getZoom())
-}
+  map.setView(coordinate, map.getZoom());
+};
 
 // 复位到深圳
 const onRestore = () => {
   //将地图恢复至初始位置状态
-  map.setView(position, 10)
-}
+  map.setView(position, 10);
+};
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

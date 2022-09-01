@@ -138,6 +138,10 @@ export const LeafLet = [
         text: '导出图片',
         link: '/leaflet/map-operation/export-image/index.md',
       },
+      {
+        text: '导出PDF',
+        link: '/leaflet/map-operation/export-pdf/index.md',
+      },
     ],
   },
 ]

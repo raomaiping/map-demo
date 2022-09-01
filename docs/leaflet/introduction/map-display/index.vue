@@ -5,19 +5,18 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import { MAPURL, ATTRIBUTIONS, SHENZHEN } from '/constants'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
-  const position = SHENZHEN.reverse()
   //地图容器
-  const map = L.map('map').setView(position, 10)
+  const map = L.map('map').setView([22.548857, 114.064839], 10)
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
   }).addTo(map)
   //添加标注
-  L.marker(position).addTo(map).bindPopup('您好！深圳').openPopup()
+  L.marker([22.548857, 114.064839]).addTo(map).bindPopup('您好！深圳').openPopup()
   // 销毁地图
   onUnmounted(() => {
     map.remove()
