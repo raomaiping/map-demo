@@ -3,16 +3,16 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from "vue";
-import L from "leaflet";
-import "leaflet.magnifyingglass/leaflet.magnifyingglass";
-import "leaflet.magnifyingglass/leaflet.magnifyingglass.css";
-import { ATTRIBUTIONS } from "/constants";
+import { onMounted, onUnmounted } from 'vue'
+import L from 'leaflet'
+import 'leaflet.magnifyingglass/leaflet.magnifyingglass'
+import 'leaflet.magnifyingglass/leaflet.magnifyingglass.css'
+import { ATTRIBUTIONS } from '/constants'
 
-let map = null;
+let map = null
 const initMap = () => {
   //地图容器
-  map = L.map("map", {
+  map = L.map('map', {
     zoomControl: false,
     //参考坐标系
     crs: L.CRS.EPSG3857,
@@ -26,22 +26,22 @@ const initMap = () => {
     zoom: 10,
     //限制显示地理范围
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
-  });
+  })
   //加载天地图矢量图层
   L.tileLayer(
-    "http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610",
-    { noWrap: true, attribution: ATTRIBUTIONS }
-  ).addTo(map);
+    'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    { noWrap: true, attribution: ATTRIBUTIONS },
+  ).addTo(map)
   //加载天地图矢量注记图层
   L.tileLayer(
-    "http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610",
-    { noWrap: true, attribution: ATTRIBUTIONS }
-  ).addTo(map);
+    'http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    { noWrap: true, attribution: ATTRIBUTIONS },
+  ).addTo(map)
   //创建天地图影像图层
   const imgLayer = L.tileLayer(
-    "http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610",
-    { noWrap: true, attribution: ATTRIBUTIONS }
-  );
+    'http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    { noWrap: true, attribution: ATTRIBUTIONS },
+  )
   //添加放大镜
   L.magnifyingGlass({
     //设置放大镜中显示的图层
@@ -50,16 +50,16 @@ const initMap = () => {
     radius: 100,
     //设置放大镜中图层级数和主图层的级数差（0表示同级）
     zoomOffset: 0,
-  }).addTo(map);
+  }).addTo(map)
   // 销毁地图
   onUnmounted(() => {
-    map.remove();
-  });
-};
+    map.remove()
+  })
+}
 
 onMounted(() => {
-  initMap();
-});
+  initMap()
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

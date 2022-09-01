@@ -16,7 +16,10 @@ const initMap = () => {
     attribution: ATTRIBUTIONS,
   }).addTo(map)
   //添加标注
-  L.marker([22.548857, 114.064839]).addTo(map).bindPopup('您好！深圳').openPopup()
+  L.marker([22.548857, 114.064839])
+    .addTo(map)
+    .bindPopup('您好！深圳')
+    .openPopup()
   // 销毁地图
   onUnmounted(() => {
     map.remove()

@@ -22,17 +22,19 @@ const initMap = () => {
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-    crossOrigin: "anonymous"
+    crossOrigin: 'anonymous',
   }).addTo(map)
   // 加载导出pdf控件
-  L.control.browserPrint({
-    title: '导出PDF地图',
-    documentTitle: "printPdf",
-    printModes: [
-      L.BrowserPrint.Mode.Landscape("Tabloid", { title: "导出" }),
-      L.BrowserPrint.Mode.Custom("B5", { title: "选择区域" })
-    ],
-  }).addTo(map);
+  L.control
+    .browserPrint({
+      title: '导出PDF地图',
+      documentTitle: 'printPdf',
+      printModes: [
+        L.BrowserPrint.Mode.Landscape('Tabloid', { title: '导出' }),
+        L.BrowserPrint.Mode.Custom('B5', { title: '选择区域' }),
+      ],
+    })
+    .addTo(map)
 
   // 销毁地图
   onUnmounted(() => {

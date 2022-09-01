@@ -6,7 +6,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet.browser.print/dist/leaflet.browser.print'
-import domtoimage from 'dom-to-image';
+import domtoimage from 'dom-to-image'
 import { MAPURL, ATTRIBUTIONS } from '/constants'
 let map = null
 const initMap = () => {
@@ -23,25 +23,26 @@ const initMap = () => {
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-    crossOrigin: "anonymous"
+    crossOrigin: 'anonymous',
   }).addTo(map)
   const saveAsImage = function () {
-    return domtoimage.toPng(document.getElementById('map-print'))
+    return domtoimage
+      .toPng(document.getElementById('map-print'))
       .then(function (dataUrl) {
-        const link = document.createElement('a');
-        link.download = "地图.png";
-        link.href = dataUrl;
-        link.click();
-      });
+        const link = document.createElement('a')
+        link.download = '地图.png'
+        link.href = dataUrl
+        link.click()
+      })
   }
   // 加载导出图片控件
-  L.control.browserPrint({
-    title: '导出PNG地图',
-    printModes: [
-      L.BrowserPrint.Mode.Auto("Download PNG"),
-    ],
-    printFunction: saveAsImage
-  }).addTo(map);
+  L.control
+    .browserPrint({
+      title: '导出PNG地图',
+      printModes: [L.BrowserPrint.Mode.Auto('Download PNG')],
+      printFunction: saveAsImage,
+    })
+    .addTo(map)
 
   // 销毁地图
   onUnmounted(() => {

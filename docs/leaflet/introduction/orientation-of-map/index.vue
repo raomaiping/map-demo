@@ -3,41 +3,41 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from "vue";
-import L from "leaflet";
-import { MAPURL, ATTRIBUTIONS } from "/constants";
+import { onMounted, onUnmounted } from 'vue'
+import L from 'leaflet'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
   //地图容器
-  const map = L.map("map").setView([22.548857, 114.064839], 10);
+  const map = L.map('map').setView([22.548857, 114.064839], 10)
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map);
+  }).addTo(map)
   // 定位Geolocation
   map.locate({
     setView: true,
     maxZoom: 18,
-  });
+  })
   //注册定位成功事件
-  map.on("locationfound", (e) => {
-    const radius = e.accuracy / 2;
-    L.marker(e.latlng).addTo(map).bindPopup("你就在这个圈内");
-    L.circle(e.latlng, radius).addTo(map);
-  });
+  map.on('locationfound', (e) => {
+    const radius = e.accuracy / 2
+    L.marker(e.latlng).addTo(map).bindPopup('你就在这个圈内')
+    L.circle(e.latlng, radius).addTo(map)
+  })
   //注册定位失败事件
-  map.on("locationerror", (e) => {
-    console.log("定位出错=====>", e);
-  });
+  map.on('locationerror', (e) => {
+    console.log('定位出错=====>', e)
+  })
   // 销毁地图
   onUnmounted(() => {
-    map.remove();
-  });
-};
+    map.remove()
+  })
+}
 onMounted(() => {
-  initMap();
-});
+  initMap()
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

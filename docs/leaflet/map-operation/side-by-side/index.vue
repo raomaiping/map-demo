@@ -5,40 +5,33 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
+import 'leaflet-side-by-side2'
 import { ATTRIBUTIONS } from '/constants'
-
+let map = null
 const initMap = () => {
   //地图容器
-  const map = L.map('map', {
+  map = L.map('map', {
+    //地图渲染在canvas上
+    preferCanvas: true,
     //参考坐标系
     crs: L.CRS.EPSG3857,
-    //显示中心
+    // 显示中心
     center: [22.548857, 114.064839],
-    //最小显示等级
-    minZoom: 1,
-    //最大显示等级
-    maxZoom: 18,
-    //当前显示等级
-    zoom: 12,
+    // 缩放级别
+    zoom: 10,
   })
-  //加载天地图矢量图层
-  L.tileLayer(
+  //天地图矢量图层
+  const vecLayer = L.tileLayer(
     'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
-    {
-      noWrap: true,
-      //设置版权
-      attribution: ATTRIBUTIONS,
-    },
+    { noWrap: true, attribution: ATTRIBUTIONS },
   ).addTo(map)
-  //加载天地图矢量注记图层
-  L.tileLayer(
-    'http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
-    {
-      noWrap: true,
-      //设置版权
-      attribution: ATTRIBUTIONS,
-    },
+  //天地图影像图层
+  const imgLayer = L.tileLayer(
+    'http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
+    { noWrap: true, attribution: ATTRIBUTIONS },
   ).addTo(map)
+  //添加卷帘控件到地图中
+  L.control.sideBySide(vecLayer, imgLayer).addTo(map)
   // 销毁地图
   onUnmounted(() => {
     map.remove()
@@ -53,5 +46,6 @@ onMounted(() => {
 <style scoped>
 #map {
   height: 650px;
+  color: #3a3a3a;
 }
 </style>

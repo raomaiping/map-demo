@@ -142,6 +142,10 @@ export const LeafLet = [
         text: '导出PDF',
         link: '/leaflet/map-operation/export-pdf/index.md',
       },
+      {
+        text: '卷帘',
+        link: '/leaflet/map-operation/side-by-side/index.md',
+      },
     ],
   },
 ]

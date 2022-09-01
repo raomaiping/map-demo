@@ -3,14 +3,14 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from "vue";
-import L from "leaflet";
-import AutoGraticule from "leaflet-auto-graticule";
-import { MAPURL, ATTRIBUTIONS } from "/constants";
+import { onMounted, onUnmounted } from 'vue'
+import L from 'leaflet'
+import AutoGraticule from 'leaflet-auto-graticule'
+import { MAPURL, ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
   //地图容器
-  const map = L.map("map", {
+  const map = L.map('map', {
     zoomControl: false,
     //参考坐标系
     crs: L.CRS.EPSG3857,
@@ -24,22 +24,22 @@ const initMap = () => {
     zoom: 10,
     //限制显示地理范围
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
-  });
+  })
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map);
+  }).addTo(map)
   // 添加地图网格
-  new AutoGraticule().addTo(map);
+  new AutoGraticule().addTo(map)
   // 销毁地图
   onUnmounted(() => {
-    map.remove();
-  });
-};
+    map.remove()
+  })
+}
 onMounted(() => {
-  initMap();
-});
+  initMap()
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
