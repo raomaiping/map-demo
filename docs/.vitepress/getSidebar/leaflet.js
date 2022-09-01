@@ -130,6 +130,10 @@ export const LeafLet = [
         text: '图层组和图层控制',
         link: '/leaflet/map-operation/layer-group-control/index.md',
       },
+      {
+        text: '图层层级控制',
+        link: '/leaflet/map-operation/layer-control/index.md',
+      },
     ],
   },
 ]
