@@ -239,6 +239,10 @@ export const LeafLet = [
         text: '自定义标注',
         link: '/leaflet/map-marker/custom-marker/index.md',
       },
+      {
+        text: 'Popup标注视图',
+        link: '/leaflet/map-marker/popup/index.md',
+      },
     ],
   },
 ]
