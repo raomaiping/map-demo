@@ -243,6 +243,10 @@ export const LeafLet = [
         text: 'Popup标注视图',
         link: '/leaflet/map-marker/popup/index.md',
       },
+      {
+        text: '聚合标注',
+        link: '/leaflet/map-marker/cluster-labels/index.md',
+      },
     ],
   },
 ]
