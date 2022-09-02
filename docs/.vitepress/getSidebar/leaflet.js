@@ -220,4 +220,13 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '地图标注',
+    items: [
+      {
+        text: '图片标注',
+        link: '/leaflet/map-marker/picture-marker/index.md',
+      },
+    ],
+  },
 ]
