@@ -214,6 +214,10 @@ export const LeafLet = [
         text: '绘制矩形网格',
         link: '/leaflet/graphic-operation/graphic-draw-rect-grid/index.md',
       },
+      {
+        text: '绘制箭头及虚线矩形',
+        link: '/leaflet/graphic-operation/draw-line-arrows/index.md',
+      },
     ],
   },
 ]

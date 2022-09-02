@@ -1907,6 +1907,18 @@
   dependencies:
     "leaflet-path-drag" "^1.8.0-beta.3"
 
+"leaflet-polylinedecorator@^1.6.0":
+  "integrity" "sha512-kn3krmZRetgvN0wjhgYL8kvyLS0tUogAl0vtHuXQnwlYNjbl7aLQpkoFUo8UB8gVZoB0dhI4Tb55VdTJAcYzzQ=="
+  "resolved" "https://registry.npmjs.org/leaflet-polylinedecorator/-/leaflet-polylinedecorator-1.6.0.tgz"
+  "version" "1.6.0"
+  dependencies:
+    "leaflet-rotatedmarker" "^0.2.0"
+
+"leaflet-rotatedmarker@^0.2.0":
+  "integrity" "sha512-yc97gxLXwbZa+Gk9VCcqI0CkvIBC9oNTTjFsHqq4EQvANrvaboib4UdeQLyTnEqDpaXHCqzwwVIDHtvz2mUiDg=="
+  "resolved" "https://registry.npmjs.org/leaflet-rotatedmarker/-/leaflet-rotatedmarker-0.2.0.tgz"
+  "version" "0.2.0"
+
 "leaflet-side-by-side2@^2.2.0":
   "integrity" "sha512-+1jgSl8sZFcMTSgBqxdGUkih84VB4LxzOcXif4NAxwiNIM0ZoCIgaSSqBK7SfujRN0u6U+Klg5zqlSO3/DgpUw=="
   "resolved" "https://registry.npmjs.org/leaflet-side-by-side2/-/leaflet-side-by-side2-2.2.0.tgz"

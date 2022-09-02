@@ -27,6 +27,7 @@
     "leaflet-minimap": "^3.6.1",
     "leaflet-nav": "^1.0.3",
     "leaflet-path-transform": "^1.8.0-beta.3",
+    "leaflet-polylinedecorator": "^1.6.0",
     "leaflet-side-by-side2": "^2.2.0",
     "leaflet.browser.print": "^2.0.2",
     "leaflet.chinatmsproviders": "^3.0.6",
