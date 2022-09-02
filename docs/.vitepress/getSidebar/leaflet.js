@@ -235,6 +235,10 @@ export const LeafLet = [
         text: '矢量图形标注',
         link: '/leaflet/map-marker/vector-label/index.md',
       },
+      {
+        text: '自定义标注',
+        link: '/leaflet/map-marker/custom-marker/index.md',
+      },
     ],
   },
 ]
