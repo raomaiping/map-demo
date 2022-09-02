@@ -192,6 +192,10 @@ export const LeafLet = [
         text: '图形样式编辑',
         link: '/leaflet/graphic-operation/features-style/index.md',
       },
+      {
+        text: '获取几何信息',
+        link: '/leaflet/graphic-operation/get-geometry-info/index.md',
+      },
     ],
   },
 ]

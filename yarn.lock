@@ -1861,6 +1861,11 @@
     "fetch-jsonp" "^1.0.0"
     "leaflet" "^1.0.0-beta.2"
 
+"leaflet-draw@^1.0.4":
+  "integrity" "sha512-rsQ6saQO5ST5Aj6XRFylr5zvarWgzWnrg46zQ1MEOEIHsppdC/8hnN8qMoFvACsPvTioAuysya/TVtog15tyAQ=="
+  "resolved" "https://registry.npmjs.org/leaflet-draw/-/leaflet-draw-1.0.4.tgz"
+  "version" "1.0.4"
+
 "leaflet-gpx@^1.7.0":
   "integrity" "sha512-5NS5WKfp5zaAHMB2KM6OUaIng+SZ3e/UHK2++ABl2wELojYlmLqIL8t1Mj6DaZGkIh3kld+mAUvMGdIzC1yGRA=="
   "resolved" "https://registry.npmjs.org/leaflet-gpx/-/leaflet-gpx-1.7.0.tgz"
