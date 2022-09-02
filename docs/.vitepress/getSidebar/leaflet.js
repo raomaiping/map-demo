@@ -206,6 +206,10 @@ export const LeafLet = [
         link:
           '/leaflet/graphic-operation/graphic-draw-by-multi-multiRect/index.md',
       },
+      {
+        text: '绘制平行四边形网格',
+        link: '/leaflet/graphic-operation/graphic-draw-parallel-grid/index.md',
+      },
     ],
   },
 ]
