@@ -196,6 +196,11 @@ export const LeafLet = [
         text: '获取几何信息',
         link: '/leaflet/graphic-operation/get-geometry-info/index.md',
       },
+      {
+        text: '绘制同心圆',
+        link:
+          '/leaflet/graphic-operation/graphic-draw-by-multi-circle/index.md',
+      },
     ],
   },
 ]

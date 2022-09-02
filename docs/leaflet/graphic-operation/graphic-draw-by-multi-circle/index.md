@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 获取几何信息
+# 绘制同心圆
 
 ::: tip
-绘制几何图形，绘制完成可获得几何图形信息。
+绘制同心圆示例。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
@@ -21,10 +21,7 @@ onMounted(()=>{
 
 ::: details 点我查看代码
 
-<<< @/leaflet/graphic-operation/get-geometry-info/index.vue
+<<< @/leaflet/graphic-operation/graphic-draw-by-multi-circle/index.vue
 
 :::
-
-## 参考文档:
-[leaflet-draw](https://github.com/Leaflet/Leaflet.draw#customizing-language-and-text-in-leafletdraw)
 
