@@ -5,6 +5,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
+import { ElMessageBox } from 'element-plus'
 import { MAPURL, ATTRIBUTIONS } from '/constants'
 let map = null
 const initMap = () => {
@@ -26,23 +27,28 @@ const initMap = () => {
     attribution: ATTRIBUTIONS,
   }).addTo(map)
 
-  /**地图移动结束事件
-   *  @param {string} type 事件类型（地图移动结束）
+  /**地图单击事件
+   *  @param {string} type 事件类型（地图单击）
    *  @param {function} fn 事件触发后的响应函数
    */
-  map.on('moveend', (e) => {
-    console.log(e)
-    //弹框提示
-    alert('地图移动结束！')
+  map.on('click', (e) => {
+    //获取点击位置的坐标
+    const coordinate = [e.latlng.lat, e.latlng.lng]
+    //弹框提示点击位置的坐标
+    ElMessageBox.alert(`点击位置为：${coordinate}`, '地图被单击了！', {
+      confirmButtonText: '收到',
+    })
   })
 
-  /**地图级数改变事件.该事件触发时也会触发地图移动结束事件
-   *  @param {string} type 事件类型（地图级数改变）
+  /**键盘按下事件
+   *  @param {string} type 事件类型（键盘按下）
    *  @param {function} fn 事件触发后的响应函数
    */
-  map.on('zoom', (e) => {
-    //弹框提示
-    alert('地图级数改变！')
+  map.on('keypress', (e) => {
+    //弹框提示输入的值
+    ElMessageBox.alert(`${e.originalEvent.key}键被按下了`, '按下了键盘!', {
+      confirmButtonText: '收到',
+    })
   })
   // 销毁地图
   onUnmounted(() => {

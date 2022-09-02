@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 地图状态事件
+# 键盘鼠标响应事件
 
 ::: tip
-移动地图或者缩放地图触发地图状态事件。
+点击地图或者按下键盘触发鼠标或键盘响应事件。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
@@ -21,7 +21,7 @@ onMounted(()=>{
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-events/map-state/index.vue
+<<< @/leaflet/map-events/mouse-keyboard-event/index.vue
 
 :::
 

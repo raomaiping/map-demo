@@ -12,7 +12,7 @@ onMounted(()=>{
 # 图层操作事件
 
 ::: tip
-图层操作事件示例。
+切换图层触发图层操作事件。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>

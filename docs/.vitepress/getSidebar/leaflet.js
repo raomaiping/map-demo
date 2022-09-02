@@ -159,6 +159,10 @@ export const LeafLet = [
         text: '地图状态事件',
         link: '/leaflet/map-events/map-state/index.md',
       },
+      {
+        text: '键盘鼠标响应事件',
+        link: '/leaflet/map-events/mouse-keyboard-event/index.md',
+      },
     ],
   },
 ]
