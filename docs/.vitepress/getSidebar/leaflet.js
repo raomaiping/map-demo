@@ -155,6 +155,10 @@ export const LeafLet = [
         text: '图层操作事件',
         link: '/leaflet/map-events/layer-operation/index.md',
       },
+      {
+        text: '地图状态事件',
+        link: '/leaflet/map-events/map-state/index.md',
+      },
     ],
   },
 ]
