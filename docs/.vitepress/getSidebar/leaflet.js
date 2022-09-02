@@ -201,6 +201,11 @@ export const LeafLet = [
         link:
           '/leaflet/graphic-operation/graphic-draw-by-multi-circle/index.md',
       },
+      {
+        text: '绘制多个中心对称多边形',
+        link:
+          '/leaflet/graphic-operation/graphic-draw-by-multi-multiRect/index.md',
+      },
     ],
   },
 ]
