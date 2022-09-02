@@ -176,6 +176,10 @@ export const LeafLet = [
         text: '绘制几何图形',
         link: '/leaflet/graphic-operation/graphic-draw-all/index.md',
       },
+      {
+        text: '交互绘制图形',
+        link: '/leaflet/graphic-operation/draw-features/index.md',
+      },
     ],
   },
 ]
