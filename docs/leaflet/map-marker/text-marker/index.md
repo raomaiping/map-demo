@@ -9,10 +9,10 @@ onMounted(()=>{
     })
 })
 </script>
-# 图片标注
+# 文本标注
 
 ::: tip
-图片标注示例（标注可拖动）。
+文本标注示例。
 :::
 
 <component v-if="mapComponent" :is="mapComponent"></component>
@@ -21,7 +21,7 @@ onMounted(()=>{
 
 ::: details 点我查看代码
 
-<<< @/leaflet/map-marker/picture-marker/index.vue
+<<< @/leaflet/map-marker/text-marker/index.vue
 
 :::
 
