@@ -1890,6 +1890,18 @@
   "resolved" "https://registry.npmjs.org/leaflet-nav/-/leaflet-nav-1.0.3.tgz"
   "version" "1.0.3"
 
+"leaflet-path-drag@^1.8.0-beta.3":
+  "integrity" "sha512-kpZ6sPOKlR+m+VChIzZZ7XFH4C+VGTrAxgnM4UN5iYl7lJ00iDOxS+r717bDf/xFFHB6n2jpUp9vvzjjteMpeQ=="
+  "resolved" "https://registry.npmjs.org/leaflet-path-drag/-/leaflet-path-drag-1.8.0-beta.3.tgz"
+  "version" "1.8.0-beta.3"
+
+"leaflet-path-transform@^1.8.0-beta.3":
+  "integrity" "sha512-SlirIo/ceq5sj5QHVNmoQ5TKzoySrfUDCXze4wwT+AhzvgHbmamErM5rt0stj5NYvBFvmW0kbD6iyxtVO4/JoQ=="
+  "resolved" "https://registry.npmjs.org/leaflet-path-transform/-/leaflet-path-transform-1.8.0-beta.3.tgz"
+  "version" "1.8.0-beta.3"
+  dependencies:
+    "leaflet-path-drag" "^1.8.0-beta.3"
+
 "leaflet-side-by-side2@^2.2.0":
   "integrity" "sha512-+1jgSl8sZFcMTSgBqxdGUkih84VB4LxzOcXif4NAxwiNIM0ZoCIgaSSqBK7SfujRN0u6U+Klg5zqlSO3/DgpUw=="
   "resolved" "https://registry.npmjs.org/leaflet-side-by-side2/-/leaflet-side-by-side2-2.2.0.tgz"

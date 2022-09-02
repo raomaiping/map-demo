@@ -184,6 +184,14 @@ export const LeafLet = [
         text: '交互编辑-拖拽移动单个图形',
         link: '/leaflet/graphic-operation/feature-move/index.md',
       },
+      {
+        text: '交互编辑-旋转图形',
+        link: '/leaflet/graphic-operation/feature-rotate/index.md',
+      },
+      {
+        text: '图形样式编辑',
+        link: '/leaflet/graphic-operation/features-style/index.md',
+      },
     ],
   },
 ]

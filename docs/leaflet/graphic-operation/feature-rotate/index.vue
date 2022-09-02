@@ -5,6 +5,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
+import 'leaflet-path-transform/dist/L.Path.Transform'
 import { ATTRIBUTIONS } from '/constants'
 
 const initMap = () => {
@@ -43,10 +44,17 @@ const initMap = () => {
       weight: 1,
       //填充色透明度
       fillOpacity: 0.5,
+      // 是否支持旋转
+      transform: true,
     },
   ).addTo(map)
-  //图形移动
-  featureMove(rectangle, map)
+
+  // 开启旋转功能
+  rectangle.transform.enable({
+    rotation: true,
+    scaling: true,
+    uniformScaling: true,
+  })
   // 销毁地图
   onUnmounted(() => {
     map.remove()
@@ -55,44 +63,6 @@ const initMap = () => {
 onMounted(() => {
   initMap()
 })
-
-/**
- * 图形移动
- */
-function featureMove(rectangle, map) {
-  /**矢量图层鼠标按压事件
-   *  @param {string} type 事件类型（鼠标按下）
-   *  @param {function} fn 事件触发后的响应函数
-   */
-  rectangle.once('mousedown', function (e) {
-    //获取鼠标按下位置的纬经度坐标
-    const coordinate1 = e.latlng
-    //监听地图移动事件，实时改变图形位置
-    map.on('mousemove ', function (e) {
-      //移动位置处的坐标
-      const coordinate2 = e.latlng
-      //计算坐标偏移
-      const dx = coordinate2.lat - coordinate1.lat
-      const dy = coordinate2.lng - coordinate1.lng
-      //重新设置矩形位置
-      const latlngs = [
-        [30.52172 + dx, 114.39359 + dy],
-        [30.52153 + dx, 114.39428 + dy],
-      ]
-      rectangle.setBounds(latlngs)
-    })
-  })
-
-  /**矢量图层鼠标释放事件
-   *  @param {string} type 事件类型（鼠标释放）
-   *  @param {function} fn 事件触发后的响应函数
-   */
-  rectangle.once('mouseup', function (e) {
-    //鼠标释放后，注销鼠标移动事件
-    map.off('mousemove')
-    alert('移动完成！')
-  })
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
