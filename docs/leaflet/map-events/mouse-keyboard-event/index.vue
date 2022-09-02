@@ -11,8 +11,6 @@ let map = null
 const initMap = () => {
   //地图容器
   map = L.map('map', {
-    //地图渲染在canvas上
-    preferCanvas: true,
     //参考坐标系
     crs: L.CRS.EPSG3857,
     // 显示中心

@@ -169,4 +169,13 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '图形操作',
+    items: [
+      {
+        text: '绘制几何图形',
+        link: '/leaflet/graphic-operation/graphic-draw-all/index.md',
+      },
+    ],
+  },
 ]
