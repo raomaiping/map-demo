@@ -180,6 +180,10 @@ export const LeafLet = [
         text: '交互绘制图形',
         link: '/leaflet/graphic-operation/draw-features/index.md',
       },
+      {
+        text: '交互编辑-拖拽移动单个图形',
+        link: '/leaflet/graphic-operation/feature-move/index.md',
+      },
     ],
   },
 ]
