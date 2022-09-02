@@ -163,6 +163,10 @@ export const LeafLet = [
         text: '键盘鼠标响应事件',
         link: '/leaflet/map-events/mouse-keyboard-event/index.md',
       },
+      {
+        text: 'Popup事件',
+        link: '/leaflet/map-events/popup-event/index.md',
+      },
     ],
   },
 ]

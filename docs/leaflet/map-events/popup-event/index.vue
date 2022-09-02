@@ -5,7 +5,6 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
-import { ElMessageBox } from 'element-plus'
 import { MAPURL, ATTRIBUTIONS } from '/constants'
 let map = null
 const initMap = () => {
@@ -20,38 +19,30 @@ const initMap = () => {
     // 缩放级别
     zoom: 10,
   })
-
+  //添加标注，设置弹框提示
+  L.marker([22.548857, 114.064839]).addTo(map).bindPopup('<b>Hello world!</b>')
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
   }).addTo(map)
 
-  /**地图单击事件
-   *  @param {string} type 事件类型（地图单击）
+  /**Popup弹出事件
+   *  @param {string} type 事件类型（popup弹出）
    *  @param {function} fn 事件触发后的响应函数
    */
-  map.on('click', (e) => {
-    //弹框提示点击位置的坐标
-    ElMessageBox.alert(
-      `点击位置为<p>经度：${e.latlng.lng}</p><p>纬度：${e.latlng.lat}</p>`,
-      '地图被单击了！',
-      {
-        confirmButtonText: '收到',
-        dangerouslyUseHTMLString: true,
-      },
-    )
+  map.on('popupopen', (e) => {
+    //弹框提示
+    alert('Popup弹出！')
   })
 
-  /**键盘按下事件
-   *  @param {string} type 事件类型（键盘按下）
+  /**Popup关闭事件
+   *  @param {string} type 事件类型（popup关闭）
    *  @param {function} fn 事件触发后的响应函数
    */
-  map.on('keypress', (e) => {
-    //弹框提示输入的值
-    ElMessageBox.alert(`${e.originalEvent.key}键被按下了`, '按下了键盘!', {
-      confirmButtonText: '收到',
-    })
+  map.on('popupclose', (e) => {
+    //弹框提示
+    alert('Popup关闭！')
   })
   // 销毁地图
   onUnmounted(() => {
