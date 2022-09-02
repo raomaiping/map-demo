@@ -210,6 +210,10 @@ export const LeafLet = [
         text: '绘制平行四边形网格',
         link: '/leaflet/graphic-operation/graphic-draw-parallel-grid/index.md',
       },
+      {
+        text: '绘制矩形网格',
+        link: '/leaflet/graphic-operation/graphic-draw-rect-grid/index.md',
+      },
     ],
   },
 ]
