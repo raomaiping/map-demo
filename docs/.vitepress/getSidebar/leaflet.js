@@ -268,6 +268,10 @@ export const LeafLet = [
         text: '水流模拟',
         link: '/leaflet/feature-animation/polyline-snake-anim/index.md',
       },
+      {
+        text: '蚂蚁路径',
+        link: '/leaflet/feature-animation/ant-path/index.md',
+      },
     ],
   },
 ]

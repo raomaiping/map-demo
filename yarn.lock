@@ -1846,6 +1846,11 @@
     "inherits" "^2.0.1"
     "stream-splicer" "^2.0.0"
 
+"leaflet-ant-path@^1.3.0":
+  "integrity" "sha512-wgWWcAD4w8QVguRsHh89NGj5eqwLOP6e/HazunW0fQaytqZqEh3WePWYIrmbUeMcOf2cX/+GecHkFfI5tirS1Q=="
+  "resolved" "https://registry.npmjs.org/leaflet-ant-path/-/leaflet-ant-path-1.3.0.tgz"
+  "version" "1.3.0"
+
 "leaflet-auto-graticule@^1.1.0":
   "integrity" "sha512-3d8FDqXpzBpFabske9IiNPrvsQeolIW9vh7s15giSb74fALAKgUe74KdY/zh0KfJMS4kHqCsO8Auo9tCPO2J/Q=="
   "resolved" "https://registry.npmjs.org/leaflet-auto-graticule/-/leaflet-auto-graticule-1.1.0.tgz"
