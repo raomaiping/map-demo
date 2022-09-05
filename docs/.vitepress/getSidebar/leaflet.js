@@ -247,6 +247,10 @@ export const LeafLet = [
         text: '聚合标注',
         link: '/leaflet/map-marker/cluster-labels/index.md',
       },
+      {
+        text: '视频标注',
+        link: '/leaflet/map-marker/video-marker/index.md',
+      },
     ],
   },
 ]
