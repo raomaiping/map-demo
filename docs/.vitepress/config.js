@@ -3,6 +3,7 @@ export default {
   title: 'Map Demo',
   description: 'OpenLayers Leaflet',
   lastUpdated: true,
+  ignoreDeadLinks: true,
   head: [
     [
       'link',
