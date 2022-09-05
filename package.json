@@ -34,6 +34,7 @@
     "leaflet.fullscreen2": "^1.0.0",
     "leaflet.magnifyingglass": "^1.0.0",
     "leaflet.markercluster": "^1.5.3",
+    "leaflet.polyline.snakeanim": "^0.2.0",
     "ol": "^6.15.1",
     "proj4": "^2.8.0",
     "proj4leaflet": "^1.0.2"
