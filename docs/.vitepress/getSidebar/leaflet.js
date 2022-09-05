@@ -253,4 +253,13 @@ export const LeafLet = [
       },
     ],
   },
+  {
+    text: '动画模拟',
+    items: [
+      {
+        text: '图形闪烁',
+        link: '/leaflet/feature-animation/feature-flash/index.md',
+      },
+    ],
+  },
 ]
