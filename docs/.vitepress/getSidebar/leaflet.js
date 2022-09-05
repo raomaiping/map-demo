@@ -260,6 +260,10 @@ export const LeafLet = [
         text: '图形闪烁',
         link: '/leaflet/feature-animation/feature-flash/index.md',
       },
+      {
+        text: '要素轨迹移动',
+        link: '/leaflet/feature-animation/feature-animation-move/index.md',
+      },
     ],
   },
 ]
