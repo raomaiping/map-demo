@@ -4,6 +4,10 @@
 
 本文档基于 [VitePress](https://vitepress.vuejs.org/) 构建
 
+# 线上地址
+
+http://map.raomaiping.host/
+
 # 技术栈
 
 vue3 + openlayers + leaflet 
@@ -20,3 +24,5 @@ yarn docs:dev
 ## 删除之后在运行构建命令
 
 yarn docs:build
+
+
