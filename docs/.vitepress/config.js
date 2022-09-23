@@ -28,7 +28,7 @@ export default {
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'http://10.10.20.230/architecture/map' },
+      { icon: 'github', link: 'https://github.com/raomaiping/map-demo' },
     ],
     sidebar: {
       '/open-layers/': OpenLayers,

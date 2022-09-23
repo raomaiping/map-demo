@@ -22,8 +22,12 @@ hero:
       text: leaflet 中文网
       link: https://leafletjs.cn/
     - theme: alt
-      text: 坐标转换
-      link: http://139.9.205.232:8080/gisTool/
+      text: openlayers 案例
+      link: http://openlayers.raomaiping.host/
+    - theme: alt
+      text: 个人简历
+      link: https://raomaiping.host/%E9%A5%B6%E8%BF%88%E5%B9%B3-%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-3%E5%B9%B4.pdf
+      
 
 features:
   - icon: 🌏
@@ -32,4 +36,8 @@ features:
   - icon: 📗
     title: 仅供学习使用
     details: 技术栈：Vue3 、 OpenLayers 、Leaflet ...
+  - icon: 👨‍💻
+    title: 寻求一份工作
+    details: 目前已经离职，想需求一份前端工程师的工作
+    
 ---
