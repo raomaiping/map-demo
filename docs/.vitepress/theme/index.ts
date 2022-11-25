@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
+import { EnhanceAppContext } from 'vitepress'
 import 'element-plus/dist/index.css'
 import 'ol/ol.css'
 import 'leaflet/dist/leaflet.css'
@@ -6,7 +7,7 @@ import './style.css'
 
 export default {
   ...DefaultTheme,
-  enhanceApp: async ({ app, router, siteData, isServer }) => {
+  enhanceApp: async ({ app, router, siteData }: EnhanceAppContext): Promise<void> => {
     // app is the Vue 3 app instance from `createApp()`. router is VitePress'
     // custom router. `siteData`` is a `ref`` of current site-level metadata.
     import('element-plus').then((module) => {

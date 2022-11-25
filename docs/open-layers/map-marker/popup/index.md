@@ -1,10 +1,11 @@
 <script setup>
 import Map from './index.vue'
 </script>
-# Popup弹窗
+
+# Popup 弹窗
 
 ::: tip
-鼠标单击标注点，弹出Popup标注。
+鼠标单击标注点，弹出 Popup 标注。
 :::
 
 <Map />
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/popup/tools.js
+<<< @/open-layers/map-marker/popup/tools.ts
 
 :::

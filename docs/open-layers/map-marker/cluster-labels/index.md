@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 聚合标注
 
 ::: tip
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/cluster-labels/clusters.js
+<<< @/open-layers/map-marker/cluster-labels/clusters.ts
 
 :::

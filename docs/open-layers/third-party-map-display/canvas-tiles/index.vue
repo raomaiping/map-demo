@@ -2,24 +2,24 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { Map, View } from 'ol'
-import { Tile as TileLayer } from 'ol/layer'
-import { onMounted } from 'vue'
-import { XYZ, TileDebug } from 'ol/source'
-import { ATTRIBUTIONS, MAPURL } from '/constants'
+<script lang="ts" setup>
+import { Map, View } from "ol";
+import { Tile as TileLayer } from "ol/layer";
+import { onMounted, onBeforeUnmount } from "vue";
+import { XYZ, TileDebug } from "ol/source";
+import { ATTRIBUTIONS, MAPURL } from "../../../constants";
 
 //实例化图层数据源对象
 const TiandituSource = new XYZ({
   attributions: ATTRIBUTIONS,
   wrapX: false,
   url: MAPURL,
-})
-
+});
+let map: Map | null = null;
 onMounted(() => {
-  new Map({
+  map = new Map({
     //地图容器div的ID
-    target: 'map',
+    target: "map",
     //地图容器中加载的图层
     layers: [
       //加载瓦片图层数据
@@ -30,9 +30,9 @@ onMounted(() => {
       new TileLayer({
         source: new TileDebug({
           //地图投影坐标系
-          projection: 'EPSG:3857',
+          projection: "EPSG:3857",
           //获取瓦片图层数据对象（osmSource）的网格信息
-          tileGrid: TiandituSource.getTileGrid(),
+          tileGrid: TiandituSource.getTileGrid() || undefined,
         }),
       }),
     ],
@@ -43,8 +43,15 @@ onMounted(() => {
       //地图初始显示级别
       zoom: 8,
     }),
-  })
-})
+  });
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

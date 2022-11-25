@@ -9,6 +9,7 @@ onMounted(()=>{
     })
 })
 </script>
+
 # Baidu
 
 ::: tip
@@ -17,10 +18,18 @@ onMounted(()=>{
 
 <component v-if="mapComponent" :is="mapComponent"></component>
 
-## 代码如下:
+## Vue 代码如下：
 
 ::: details 点我查看代码
 
 <<< @/leaflet/map-display-map-server/bai-du/index.vue
+
+:::
+
+## tileLayer.baidu.ts 代码如下：
+
+::: details 点我查看代码
+
+<<< @/leaflet/map-display-map-server/bai-du/tileLayer.baidu.ts
 
 :::

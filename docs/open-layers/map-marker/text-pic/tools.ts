@@ -1,11 +1,14 @@
 import { Style, Icon, Text, Fill, Stroke } from 'ol/style'
-import { Feature, Overlay } from 'ol'
+import { Feature, Overlay, Map } from 'ol'
+import { FeatureLike } from 'ol/Feature'
 import { Point } from 'ol/geom'
+import { Coordinate } from 'ol/coordinate'
+import { VectorLabelOptions } from '../../../@types'
 /**
  * 创建矢量标注样式函数,设置image为图标ol.style.Icon
  * @param {ol.Feature} feature 要素
  */
-export const createLabelStyle = (feature) =>
+export const createLabelStyle = (feature: FeatureLike): Style =>
   new Style({
     image: new Icon(
       /** @type {olx.style.IconOptions} */
@@ -49,13 +52,14 @@ export const createLabelStyle = (feature) =>
  * @param {ol.Coordinate} coordinate 坐标点
  * @param {ol.source.Vector} vectorSource 矢量标注的数据源
  */
-export const addVectorLabel = ({ coordinate, vectorSource }) => {
+export const addVectorLabel = ({ coordinate, vectorSource, name = '标注点' }: VectorLabelOptions) => {
+  if (vectorSource === null) return
   //新建一个要素 ol.Feature
   const newFeature = new Feature({
     //几何信息
     geometry: new Point(coordinate),
     //名称属性
-    name: '标注点',
+    name,
   })
   //设置要素的样式
   newFeature.setStyle(createLabelStyle(newFeature))
@@ -68,13 +72,15 @@ export const addVectorLabel = ({ coordinate, vectorSource }) => {
  * @param {ol.Coordinate} coordinate 坐标点
  * @param {ol.Map} map 地图实例
  */
-export const addOverlayLabel = ({ coordinate, map }) => {
+export const addOverlayLabel = ({ coordinate, map }: { coordinate: Coordinate, map: Map | null }) => {
+  if (map === null) return
   //新增div元素
   const elementDiv = document.createElement('div')
   elementDiv.className = 'marker'
   elementDiv.title = '标注点'
   // 获取id为label的元素
   const overlay = document.getElementById('label')
+  if (overlay === null) return
   // 为ID为label的div层添加div子节点
   overlay.appendChild(elementDiv)
   //新增a元素
@@ -99,10 +105,11 @@ export const addOverlayLabel = ({ coordinate, map }) => {
   })
   map.addOverlay(newText)
 }
+
 /**
  * 动态设置元素文本内容（兼容）
  */
-function setInnerText(element, text) {
+function setInnerText(element: HTMLElement, text: string) {
   if (typeof element.textContent == 'string') {
     element.textContent = text
   } else {

@@ -9,19 +9,21 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import { Map, View } from 'ol'
-import { defaults, ZoomToExtent } from 'ol/control'
-import { Tile as TileLayer } from 'ol/layer'
-import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
-let map
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { Map, View } from "ol";
+import { Coordinate } from "ol/coordinate";
+import { defaults, ZoomToExtent } from "ol/control";
+import { Tile as TileLayer } from "ol/layer";
+import { XYZ } from "ol/source";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
+
+let map: Map | null = null;
 //地图视图的初始参数
-let view
-let zoom
-let center
-let rotation
+let view: View;
+let zoom: number;
+let center: Coordinate;
+let rotation: number;
 
 const raster = new TileLayer({
   source: new XYZ({
@@ -29,13 +31,13 @@ const raster = new TileLayer({
     url: MAPURL,
     maxZoom: 20,
   }),
-})
+});
+
 const initMap = () => {
   map = new Map({
     //初始化map
-    target: 'map',
+    target: "map",
     controls: defaults({
-      /** @type {olx.control.AttributionOptions} */
       attributionOptions: {
         collapsible: true,
       },
@@ -43,9 +45,7 @@ const initMap = () => {
       new ZoomToExtent({
         extent: [
           // 坐标值
-          813079.7791264898,
-          5929220.284081122,
-          848966.9639063801,
+          813079.7791264898, 5929220.284081122, 848966.9639063801,
           5936863.986909639,
         ],
       }),
@@ -56,7 +56,7 @@ const initMap = () => {
       raster,
     ],
     view: new View({
-      projection: 'EPSG:4326', // 坐标系，有EPSG:4326和EPSG:3 857
+      projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3 857
       center: [0, 0], // 深圳坐标
       //地图初始显示级别
       zoom: 5,
@@ -67,53 +67,70 @@ const initMap = () => {
       //设置旋转角度
       rotation: Math.PI / 6,
     }),
-  })
+  });
   //设置地图视图的初始参数
-  view = map.getView()
-  zoom = view.getZoom()
-  center = view.getCenter()
-  rotation = view.getRotation()
-}
+  view = map.getView();
+  zoom = view.getZoom() || 5;
+  center = view.getCenter() || [0, 0];
+  rotation = view.getRotation();
+};
 
 // 缩小
 const handleZoomOut = () => {
+  if (map === null) return;
   //获取地图视图
-  const view = map.getView()
+  const view = map.getView();
   //获得当前缩放级数
-  const zoom = view.getZoom()
-  //地图缩小一级
-  view.setZoom(zoom - 1)
-}
+  const zoom = view.getZoom();
+  if (zoom) {
+    //地图缩小一级
+    view.setZoom(zoom - 1);
+  }
+};
+
 //放大
 const handleZoomIn = () => {
+  if (map === null) return;
   //获取地图视图
-  const view = map.getView()
+  const view = map.getView();
   //获得当前缩放级数
-  const zoom = view.getZoom()
-  //地图放大一级
-  view.setZoom(zoom + 1)
-}
+  const zoom = view.getZoom();
+  if (zoom) {
+    //地图放大一级
+    view.setZoom(zoom + 1);
+  }
+};
 
 // 平移到深圳
 const handlePanToSZ = () => {
+  if (map === null) return;
   //获取地图视图
-  const view = map.getView()
+  const view = map.getView();
   //平移地图
-  view.setCenter([114.064839, 22.548857])
-  view.setZoom(12)
-}
+  view.setCenter([114.064839, 22.548857]);
+  view.setZoom(12);
+};
+
 // 复位
 const handleRestore = () => {
   //初始中心点
-  view.setCenter(center)
+  view.setCenter(center);
   //初始旋转角度
-  view.setRotation(rotation)
+  view.setRotation(rotation);
   //初始缩放级数
-  view.setZoom(zoom)
-}
+  view.setZoom(zoom);
+};
+
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

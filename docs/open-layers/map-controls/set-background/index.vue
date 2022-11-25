@@ -1,60 +1,76 @@
 <template>
-  <div class="map" ref="map">
+  <div class="map" ref="map_el">
     <el-button type="primary" class="btn" @click="setBackgroundImage">
-      {{ isSetBackgroundImage ? '取消背景' : '设置背景' }}
+      {{ isSetBackgroundImage ? "取消背景" : "设置背景" }}
     </el-button>
   </div>
 </template>
 
-<script setup>
-import { onMounted, ref } from 'vue'
-import { Map, View } from 'ol'
-import { Projection } from 'ol/proj'
-import { Image } from 'ol/layer'
-import { ImageStatic } from 'ol/source'
-import { getCenter } from 'ol/extent'
-import { ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { onMounted, ref, Ref, onBeforeUnmount } from "vue";
+import { Map, View } from "ol";
+import { Projection } from "ol/proj";
+import { Image } from "ol/layer";
+import { ImageStatic } from "ol/source";
+import { getCenter } from "ol/extent";
+import { ATTRIBUTIONS } from "../../../constants";
 
 // 单张图片的矢量图层
-const map = ref(null)
-const isSetBackgroundImage = ref(false)
+const map_el: Ref<HTMLElement | null> = ref(null);
+const isSetBackgroundImage = ref(false);
+let map: Map | null = null;
+
 const initMap = () => {
-  const extent = [0, 0, 1024, 968] //表示图片的尺寸
+  if (map_el.value === null) return;
+
+  const extent = [0, 0, 1024, 968]; //表示图片的尺寸
   const projection = new Projection({
-    code: 'EPSG:3857',
+    code: "EPSG:3857",
     extent,
-  })
-  var imageLayer = new Image({
+  });
+
+  const imageLayer = new Image({
     source: new ImageStatic({
       attributions: ATTRIBUTIONS,
-      url: 'https://www.raomaiping.host/images/world6.jpg',
+      url: "https://www.raomaiping.host/images/world6.jpg",
       projection,
       imageExtent: extent,
     }),
-  })
-  new Map({
+  });
+
+  map = new Map({
     //初始化map
-    target: map.value,
+    target: map_el.value,
     layers: [imageLayer],
     view: new View({
       projection,
       center: getCenter(extent),
       zoom: 2,
     }),
-  })
-}
+  });
+};
+
 const setBackgroundImage = () => {
+  if (map_el.value === null) return;
   if (isSetBackgroundImage.value) {
-    map.value.style.backgroundImage = ''
+    map_el.value.style.backgroundImage = "";
   } else {
-    map.value.style.backgroundImage =
-      'url("https://q2.qlogo.cn/headimg_dl?dst_uin=2582395486&spec=100")'
+    map_el.value.style.backgroundImage =
+      'url("https://q2.qlogo.cn/headimg_dl?dst_uin=2582395486&spec=100")';
   }
-  isSetBackgroundImage.value = !isSetBackgroundImage.value
-}
+  isSetBackgroundImage.value = !isSetBackgroundImage.value;
+};
+
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

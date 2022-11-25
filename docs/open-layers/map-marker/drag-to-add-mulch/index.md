@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 拖拽添加覆盖物
 
 ::: tip
@@ -23,7 +24,7 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/drag-to-add-mulch/tools.js
+<<< @/open-layers/map-marker/drag-to-add-mulch/tools.ts
 
 :::
 
@@ -31,6 +32,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/drag-to-add-mulch/drag.js
+<<< @/open-layers/map-marker/drag-to-add-mulch/drag.ts
 
 :::

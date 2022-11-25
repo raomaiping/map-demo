@@ -1,3 +1,4 @@
+// @ts-ignore
 L.AnimatedMarker = L.Marker.extend({
   options: {
     speetX: 1,
@@ -15,6 +16,7 @@ L.AnimatedMarker = L.Marker.extend({
   initialize: function (latlngs, options) {
     Object.assign(this.options, options)
     this.isZooming = false
+    // @ts-ignore
     L.Marker.prototype.initialize.call(this, latlngs[0], options)
     this.setLine(latlngs)
     this.resetIcon()
@@ -128,7 +130,7 @@ L.AnimatedMarker = L.Marker.extend({
     if (
       now < end &&
       this.getLatLng().distanceTo(this.startLatLng) <
-        this.nextLatLng.distanceTo(this.startLatLng)
+      this.nextLatLng.distanceTo(this.startLatLng)
     ) {
       if (this.isPlay) {
         requestAnimationFrame(this.animate.bind(this))
@@ -161,12 +163,12 @@ L.AnimatedMarker = L.Marker.extend({
         this.startLatLng.lat +
         ((this.nextLatLng.lat - this.startLatLng.lat) /
           this.startLatLng.duration) *
-          t
+        t
       var lng =
         this.startLatLng.lng +
         ((this.nextLatLng.lng - this.startLatLng.lng) /
           this.startLatLng.duration) *
-          t
+        t
       this.setLatLng({
         lat: lat,
         lng: lng,
@@ -186,7 +188,9 @@ L.AnimatedMarker = L.Marker.extend({
     this._latlngsnew = []
     for (var i = 0; i < this._latlngs.length; i++) {
       var _latlng = L.latLng(this._latlngs[i].lat, this._latlngs[i].lng)
+      // @ts-ignore
       _latlng.duration = this._latlngs[i].duration / speed
+      // @ts-ignore
       _latlng.bearing = this._latlngs[i].bearing
       this._latlngsnew.push(_latlng)
     }
@@ -261,6 +265,8 @@ L.AnimatedMarker = L.Marker.extend({
   },
 })
 
+// @ts-ignore
 L.animatedMarker = function (latlngs, options) {
+  // @ts-ignore
   return new L.AnimatedMarker(latlngs, options)
 }

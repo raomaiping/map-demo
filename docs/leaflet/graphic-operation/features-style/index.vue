@@ -6,15 +6,17 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted, onUnmounted } from 'vue'
-import L from 'leaflet'
-import { ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import L from "leaflet";
+import { ATTRIBUTIONS } from "../../../constants";
+
+let map: L.Map | null = null;
 //绘制图层
-const drawnItems = new L.FeatureGroup()
+const drawnItems = new L.FeatureGroup();
 const initMap = () => {
   //地图容器
-  const map = L.map('map', {
+  map = L.map("map", {
     //参考坐标系
     crs: L.CRS.EPSG3857,
     //显示中心
@@ -23,18 +25,18 @@ const initMap = () => {
     dragging: false,
     //当前显示等级
     zoom: 18,
-  })
+  });
 
   //加载天地图矢量图层
   L.tileLayer(
-    'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
-    { noWrap: true, attribution: ATTRIBUTIONS },
-  ).addTo(map)
+    "http://t0.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610",
+    { noWrap: true, attribution: ATTRIBUTIONS }
+  ).addTo(map);
   //加载天地图矢量注记图层
   L.tileLayer(
-    'http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610',
-    { noWrap: true, attribution: ATTRIBUTIONS },
-  ).addTo(map)
+    "http://t0.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=55b4d4eaef95384c946e9bd1b99c5610",
+    { noWrap: true, attribution: ATTRIBUTIONS }
+  ).addTo(map);
 
   //绘制线
   L.polyline(
@@ -44,9 +46,9 @@ const initMap = () => {
     ],
     {
       //线颜色
-      color: 'blue',
-    },
-  ).addTo(drawnItems)
+      color: "blue",
+    }
+  ).addTo(drawnItems);
 
   //绘制矩形
   L.rectangle(
@@ -56,47 +58,50 @@ const initMap = () => {
     ],
     {
       //颜色
-      color: 'red',
-    },
-  ).addTo(drawnItems)
+      color: "red",
+    }
+  ).addTo(drawnItems);
 
   //添加绘制图层
-  map.addLayer(drawnItems)
+  map.addLayer(drawnItems);
+};
 
-  // 销毁地图
-  onUnmounted(() => {
-    map.remove()
-  })
-}
+// 销毁地图
+onBeforeUnmount(() => {
+  if (map) {
+    map.remove();
+    map = null;
+  }
+});
 
 /**修改线图形的样式
  */
 const setLineStyle = () => {
   //获取颜色
-  const color = getRandomColor()
-  //修改样式
-  drawnItems.getLayers()[0].setStyle({ color: color })
-}
+  const color = getRandomColor();
+  // @ts-ignore 修改样式
+  drawnItems.getLayers()[0].setStyle({ color: color });
+};
 /**修改矩形图形的样式
  */
 const setPolygonStyle = () => {
   //获取颜色
-  const color = getRandomColor()
-  //修改样式
-  drawnItems.getLayers()[1].setStyle({ color: color })
-}
+  const color = getRandomColor();
+  // @ts-ignore 修改样式
+  drawnItems.getLayers()[1].setStyle({ color: color });
+};
 
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
 
 /**生成随机颜色
  */
 function getRandomColor() {
-  const r = Math.floor(Math.random() * 256)
-  const g = Math.floor(Math.random() * 256)
-  const b = Math.floor(Math.random() * 256)
-  return 'rgb(' + r + ',' + g + ',' + b + ')'
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return "rgb(" + r + "," + g + "," + b + ")";
 }
 </script>
 

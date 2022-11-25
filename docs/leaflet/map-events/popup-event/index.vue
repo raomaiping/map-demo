@@ -2,54 +2,60 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted, onUnmounted } from 'vue'
-import L from 'leaflet'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
-let map = null
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import L from "leaflet";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
+
+let map: L.Map | null = null;
 const initMap = () => {
   //地图容器
-  map = L.map('map', {
+  map = L.map("map", {
     //参考坐标系
     crs: L.CRS.EPSG3857,
     // 显示中心
     center: [22.548857, 114.064839],
     // 缩放级别
     zoom: 10,
-  })
+  });
   //添加标注，设置弹框提示
-  L.marker([22.548857, 114.064839]).addTo(map).bindPopup('<b>Hello world!</b>')
+  L.marker([22.548857, 114.064839]).addTo(map).bindPopup("<b>Hello world!</b>");
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map)
+  }).addTo(map);
 
   /**Popup弹出事件
    *  @param {string} type 事件类型（popup弹出）
    *  @param {function} fn 事件触发后的响应函数
    */
-  map.on('popupopen', (e) => {
+  map.on("popupopen", (e) => {
     //弹框提示
-    alert('Popup弹出！')
-  })
+    alert("Popup弹出！");
+  });
 
   /**Popup关闭事件
    *  @param {string} type 事件类型（popup关闭）
    *  @param {function} fn 事件触发后的响应函数
    */
-  map.on('popupclose', (e) => {
+  map.on("popupclose", (e) => {
     //弹框提示
-    alert('Popup关闭！')
-  })
-  // 销毁地图
-  onUnmounted(() => {
-    map.remove()
-  })
-}
+    alert("Popup关闭！");
+  });
+};
+
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+// 销毁地图
+onBeforeUnmount(() => {
+  if (map) {
+    map.remove();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 地图打印
 
 ::: tip
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/lib/index.js#exportMap
+<<< @/lib/index.ts#exportMap
 
 :::

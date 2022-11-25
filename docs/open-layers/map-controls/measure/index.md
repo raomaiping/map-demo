@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 测量
 
 ::: tip
@@ -9,8 +10,7 @@ import Map from './index.vue'
 
 <Map />
 
-
-## Vue代码如下：
+## Vue 代码如下：
 
 ::: details 点我查看代码
 
@@ -18,11 +18,10 @@ import Map from './index.vue'
 
 :::
 
-## index.js 代码如下：
+## index.ts 代码如下：
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-controls/measure/index.js
+<<< @/open-layers/map-controls/measure/index.ts
 
 :::
-

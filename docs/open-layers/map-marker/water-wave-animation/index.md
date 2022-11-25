@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 水纹动画
 
 ::: tip
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/water-wave-animation/tools.js
+<<< @/open-layers/map-marker/water-wave-animation/tools.ts
 
 :::

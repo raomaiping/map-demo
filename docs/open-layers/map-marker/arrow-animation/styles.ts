@@ -1,5 +1,5 @@
 import { Fill, Stroke, Circle, Style, Text } from 'ol/style'
-import { AUTHOR_INFO } from '/constants'
+import { AUTHOR_INFO } from '../../../constants'
 
 export const textStyle = new Style({
   text: new Text({

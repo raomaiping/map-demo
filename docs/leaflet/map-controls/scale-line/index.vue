@@ -2,14 +2,15 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted, onUnmounted } from 'vue'
-import L from 'leaflet'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import L from "leaflet";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
 
+let map: L.Map | null = null;
 const initMap = () => {
   //地图容器
-  const map = L.map('map', {
+  map = L.map("map", {
     zoomControl: false,
     //参考坐标系
     crs: L.CRS.EPSG3857,
@@ -23,25 +24,29 @@ const initMap = () => {
     zoom: 10,
     //限制显示地理范围
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
-  })
+  });
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map)
+  }).addTo(map);
 
   //定义一个比例尺控件
-  const scale = L.control.scale()
+  const scale = L.control.scale();
   //将比例尺加载到地图容器中
-  map.addControl(scale)
-  // 销毁地图
-  onUnmounted(() => {
-    map.remove()
-  })
-}
+  map.addControl(scale);
+};
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+// 销毁地图
+onBeforeUnmount(() => {
+  if (map) {
+    map.remove();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
