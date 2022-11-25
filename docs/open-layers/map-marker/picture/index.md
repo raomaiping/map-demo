@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 图片标注
 
 ::: tip
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/picture/tools.js
+<<< @/open-layers/map-marker/picture/tools.ts
 
 :::

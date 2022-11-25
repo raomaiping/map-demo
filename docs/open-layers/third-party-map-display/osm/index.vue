@@ -2,17 +2,18 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { Map, View } from 'ol'
-import { OSM } from 'ol/source'
-import { Tile as TileLayer } from 'ol/layer'
-import { onMounted } from 'vue'
-import { ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { Map, View } from "ol";
+import { OSM } from "ol/source";
+import { Tile as TileLayer } from "ol/layer";
+import { onMounted, onBeforeUnmount } from "vue";
+import { ATTRIBUTIONS } from "../../../constants";
 
+let map: Map | null = null;
 onMounted(() => {
-  new Map({
+  map = new Map({
     //地图容器div的ID
-    target: 'map',
+    target: "map",
     //地图容器中加载的图层
     layers: [
       //加载瓦片图层数据
@@ -30,8 +31,15 @@ onMounted(() => {
       //地图初始显示级别
       zoom: 2,
     }),
-  })
-})
+  });
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

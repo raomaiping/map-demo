@@ -1,4 +1,4 @@
-L.drawLocal = {
+(L as any).drawLocal = {
   // format: {
   // 	numeric: {
   // 		delimiters: {

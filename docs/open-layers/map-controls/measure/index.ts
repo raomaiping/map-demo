@@ -1,4 +1,7 @@
-import { Overlay } from "ol";
+import { Overlay, Map } from "ol";
+import { LineString, Polygon } from 'ol/geom'
+import VectorSource from 'ol/source/Vector'
+import { Type } from 'ol/geom/Geometry'
 import { getLength, getArea } from "ol/sphere";
 import { Style, Fill, Stroke, Circle } from "ol/style";
 import { Draw } from "ol/interaction";
@@ -8,8 +11,8 @@ import { Vector } from "ol/layer"
  * @param {Element} helpTooltipElement  帮助提示框对象
  * @param {ol.Map} map  地图实例
  */
-export function createHelpTooltip({ helpTooltipElement, map }) {
-    if (helpTooltipElement) {
+export function createHelpTooltip({ helpTooltipElement, map }: { helpTooltipElement: HTMLElement | null, map: Map }): [HTMLDivElement, Overlay] {
+    if (helpTooltipElement && helpTooltipElement.parentNode) {
         helpTooltipElement.parentNode.removeChild(helpTooltipElement);
     }
     const newHelpTooltipElement = document.createElement("div");
@@ -29,8 +32,8 @@ export function createHelpTooltip({ helpTooltipElement, map }) {
 * @param {Element} measureTooltipElement  测量工具提示框对象
 * @param {ol.Map} map  地图实例
 */
-export function createMeasureTooltip({ measureTooltipElement, map }) {
-    if (measureTooltipElement) {
+export function createMeasureTooltip({ measureTooltipElement, map }: { measureTooltipElement: HTMLElement | null, map: Map }): [HTMLDivElement, Overlay] {
+    if (measureTooltipElement && measureTooltipElement.parentNode) {
         measureTooltipElement.parentNode.removeChild(measureTooltipElement);
     }
     const newMeasureTooltipElement = document.createElement("div");
@@ -51,8 +54,8 @@ export function createMeasureTooltip({ measureTooltipElement, map }) {
  * @param {ol.Map} map  地图实例
  * @return {string}
  */
-export function formatLength({ checked, line, map }) {
-    let length;
+export function formatLength({ checked, line, map }: { checked: boolean, line: LineString, map: Map }): string {
+    let length: number;
     if (checked) {
         //若使用测地学方法测量
         const sourceProj = map.getView().getProjection(); //地图数据源投影坐标系
@@ -63,7 +66,7 @@ export function formatLength({ checked, line, map }) {
     } else {
         length = Math.round(line.getLength() * 100) / 100; //直接得到线的长度
     }
-    let output;
+    let output: string;
     if (length > 100) {
         output = Math.round((length / 1000) * 100) / 100 + " " + "km"; //换算成KM单位
     } else {
@@ -79,8 +82,8 @@ export function formatLength({ checked, line, map }) {
  * @param {ol.Map} map  地图实例
  * @return {string}
  */
-export function formatArea({ checked, polygon, map }) {
-    let area;
+export function formatArea({ checked, polygon, map }: { checked: boolean, polygon: Polygon, map: Map }): string {
+    let area: number;
     if (checked) {
         //若使用测地学方法测量
         const sourceProj = map.getView().getProjection(); //地图数据源投影坐标系
@@ -93,7 +96,7 @@ export function formatArea({ checked, polygon, map }) {
     } else {
         area = polygon.getArea(); //直接获取多边形的面积
     }
-    let output;
+    let output: string;
     if (area > 10000) {
         output =
             Math.round((area / 1000000) * 100) / 100 + " " + "km<sup>2</sup>"; //换算成KM单位
@@ -108,10 +111,10 @@ export function formatArea({ checked, polygon, map }) {
  * @param {ol.geom.GeometryType} type 几何图形类型
  * @return 返回绘制好的几何图形
  */
-export function drawGeometricFigure({ source, type }) {
+export function drawGeometricFigure({ source, type }: { source: VectorSource, type: Type }): Draw {
     return new Draw({
         source, //测量绘制层数据源
-        type, /** @type {ol.geom.GeometryType} 几何图形类型 */
+        type,
         style: new Style({
             //绘制几何图形的样式
             fill: new Fill({
@@ -136,7 +139,7 @@ export function drawGeometricFigure({ source, type }) {
 }
 
 // 创建测量的绘制矢量层
-export function createVector(source) {
+export function createVector(source: VectorSource): Vector<VectorSource> {
     return new Vector({
         source,
         style: new Style({

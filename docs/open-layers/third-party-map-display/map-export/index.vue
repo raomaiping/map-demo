@@ -5,48 +5,56 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted, ref } from 'vue'
-import { Map, View } from 'ol'
-import { Tile as TileLayer } from 'ol/layer'
-import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
-import { exportMap } from '/lib'
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { Map, View } from "ol";
+import { Tile as TileLayer } from "ol/layer";
+import { XYZ } from "ol/source";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
+import { exportMap } from "../../../lib";
 
-const map = ref(null)
+let map: Map | null = null;
 const raster = new TileLayer({
   source: new XYZ({
     attributions: ATTRIBUTIONS,
     url: MAPURL,
     maxZoom: 20,
-    crossOrigin: 'anonymous',
+    crossOrigin: "anonymous",
   }),
-})
+});
 
 const initMap = () => {
-  map.value = new Map({
+  map = new Map({
     //初始化map
-    target: 'map',
+    target: "map",
     //地图容器中加载的图层
     layers: [
       //加载瓦片图层数据
       raster,
     ],
     view: new View({
-      projection: 'EPSG:4326', // 坐标系，有EPSG:4326和EPSG:3 857
+      projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3 857
       center: [0, 0], // 深圳坐标
       //地图初始显示级别
       zoom: 5,
     }),
-  })
-}
+  });
+};
 
 const handleExport = () => {
-  exportMap(map.value, '地图打印')
-}
+  exportMap(map, "地图打印");
+};
+
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

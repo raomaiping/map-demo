@@ -1,12 +1,12 @@
 import { Style, Text, Fill, Stroke } from 'ol/style'
 import { Feature } from 'ol'
 import { Point } from 'ol/geom'
-
+import { VectorLabelOptions } from '../../../@types'
 /**
  * 创建矢量标注样式函数,设置image为图标ol.style.Icon
  * @param {ol.Feature} feature 要素
  */
-export const createLabelStyle = (feature) =>
+export const createLabelStyle = (feature: Feature): Style =>
   new Style({
     text: new Text({
       //位置
@@ -20,6 +20,7 @@ export const createLabelStyle = (feature) =>
       //文本填充样式（即文字颜色）
       fill: new Fill({ color: '#aa3300' }),
       stroke: new Stroke({ color: '#ffcc33', width: 2 }),
+      offsetY: 40,
     }),
   })
 
@@ -33,7 +34,8 @@ export const addVectorLabel = ({
   coordinate,
   vectorSource,
   name = '标注点',
-}) => {
+}: VectorLabelOptions) => {
+  if (vectorSource === null) return
   //新建一个要素 ol.Feature
   const newFeature = new Feature({
     //几何信息

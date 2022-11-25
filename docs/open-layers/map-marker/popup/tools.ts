@@ -1,8 +1,19 @@
 import { Style, Icon, Text, Fill, Stroke } from 'ol/style'
-import { Overlay } from 'ol'
-import { SHENZHEN, AUTHOR_INFO } from '/constants'
+import { Overlay, Feature } from 'ol'
+import { SHENZHEN, AUTHOR_INFO } from '../../../constants'
+
+export interface FeatuerInfo {
+  geo: number[];
+  att: {
+    title: string;
+    titleURL: string;
+    text: string;
+    imgURL: string;
+  };
+}
+
 //示例标注点北京市的信息对象
-export const featuerInfo = {
+export const featuerInfo: FeatuerInfo = {
   geo: SHENZHEN,
   att: {
     //标注信息的标题内容
@@ -24,7 +35,7 @@ export const featuerInfo = {
   },
 }
 
-export const createPopup = (container) =>
+export const createPopup = (container: HTMLElement): Overlay =>
   new Overlay(
     /** @type {olx.OverlayOptions} */
     ({
@@ -47,7 +58,7 @@ export const createPopup = (container) =>
  * 创建矢量标注样式函数,设置image为图标ol.style.Icon
  * @param {ol.Feature} feature 要素
  */
-export const createLabelStyle = (feature) =>
+export const createLabelStyle = (feature: Feature): Style =>
   new Style({
     image: new Icon(
       /** @type {olx.style.IconOptions} */
@@ -85,12 +96,13 @@ export const createLabelStyle = (feature) =>
       stroke: new Stroke({ color: '#ffcc33', width: 2 }),
     }),
   })
+
 /**
  * 动态创建popup的具体内容
  * @param {Object} info 弹框信息
  * @param {Element} content 弹框内容节点
  */
-export const addFeatrueInfo = ({ info, content }) => {
+export const addFeatrueInfo = ({ info, content }: { info: FeatuerInfo, content: HTMLElement }) => {
   //新增a元素
   const elementA = document.createElement('a')
   elementA.className = 'markerInfo'
@@ -111,10 +123,11 @@ export const addFeatrueInfo = ({ info, content }) => {
   // 为content添加img子节点
   content.appendChild(elementImg)
 }
+
 /**
  * 动态设置元素文本内容（兼容）
  */
-function setInnerText(element, text) {
+function setInnerText(element: HTMLElement, text: string) {
   if (typeof element.textContent == 'string') {
     element.textContent = text
   } else {

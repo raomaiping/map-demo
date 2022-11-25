@@ -6,26 +6,26 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import { Map, View } from 'ol'
-import { Tile as TileLayer } from 'ol/layer'
-import { defaults, FullScreen } from 'ol/control'
-import { XYZ } from 'ol/source'
-import { ATTRIBUTIONS, MAPURL } from '/constants'
-import { addClusterLabels, removeClusterLabels, clusters } from './clusters'
-let map = null
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { Map, View } from "ol";
+import { Tile as TileLayer } from "ol/layer";
+import { defaults, FullScreen } from "ol/control";
+import { XYZ } from "ol/source";
+import { ATTRIBUTIONS, MAPURL } from "../../../constants";
+import { addClusterLabels, removeClusterLabels, clusters } from "./clusters";
+let map: Map | null = null;
 const raster = new TileLayer({
   source: new XYZ({
     attributions: ATTRIBUTIONS,
     url: MAPURL,
     maxZoom: 20,
   }),
-})
+});
 const initMap = () => {
   map = new Map({
     //初始化map
-    target: 'map',
+    target: "map",
     //地图容器中加载的图层
     layers: [
       //加载瓦片图层数据
@@ -41,21 +41,35 @@ const initMap = () => {
     controls: defaults().extend([
       new FullScreen(), //加载全屏显示控件（目前支持非IE内核浏览器）
     ]),
-  })
-}
+  });
+};
 // 添加聚合要素
 const handleAdd = () => {
-  addClusterLabels(map)
-}
+  if (map) {
+    addClusterLabels(map);
+  }
+};
 
 // 移除聚合要素
 const handleDelete = () => {
-  removeClusterLabels(map)
-}
+  if (map) {
+    removeClusterLabels(map);
+  }
+};
+
 onMounted(() => {
-  initMap()
-  removeClusterLabels(map)
-})
+  initMap();
+  if (map) {
+    removeClusterLabels(map);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

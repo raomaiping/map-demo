@@ -2,13 +2,13 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import { Map, View } from 'ol'
-import { Tile as TileLayer } from 'ol/layer'
-import { defaults, FullScreen } from 'ol/control'
-import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { Map, View } from "ol";
+import { Tile as TileLayer } from "ol/layer";
+import { defaults, FullScreen } from "ol/control";
+import { XYZ } from "ol/source";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
 
 const raster = new TileLayer({
   source: new XYZ({
@@ -16,18 +16,21 @@ const raster = new TileLayer({
     url: MAPURL,
     maxZoom: 20,
   }),
-})
+});
+
+let map: Map | null = null;
+
 const initMap = () => {
   new Map({
     //初始化map
-    target: 'map',
+    target: "map",
     //地图容器中加载的图层
     layers: [
       //加载瓦片图层数据
       raster,
     ],
     view: new View({
-      projection: 'EPSG:4326', // 坐标系，有EPSG:4326和EPSG:3 857
+      projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3 857
       center: [0, 0],
       //地图初始显示级别
       zoom: 5,
@@ -36,11 +39,19 @@ const initMap = () => {
     controls: defaults().extend([
       new FullScreen(), //加载全屏显示控件（目前支持非IE内核浏览器）
     ]),
-  })
-}
+  });
+};
+
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

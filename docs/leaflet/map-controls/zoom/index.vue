@@ -2,14 +2,15 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted, onUnmounted } from 'vue'
-import L from 'leaflet'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import L from "leaflet";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
 
+let map: L.Map | null = null;
 const initMap = () => {
   //地图容器
-  const map = L.map('map', {
+  const map = L.map("map", {
     zoomControl: false,
     //参考坐标系
     crs: L.CRS.EPSG3857,
@@ -23,25 +24,29 @@ const initMap = () => {
     zoom: 10,
     //限制显示地理范围
     maxBounds: L.latLngBounds(L.latLng(-180, -180), L.latLng(180, 180)),
-  })
+  });
   //加载图层
   L.tileLayer(MAPURL, {
     noWrap: true,
     attribution: ATTRIBUTIONS,
-  }).addTo(map)
+  }).addTo(map);
 
   //定义一个地图缩放控件
-  const zoomControl = L.control.zoom({ position: 'topleft' })
+  const zoomControl = L.control.zoom({ position: "topleft" });
   //将地图缩放控件加入到地图容器中
-  map.addControl(zoomControl)
-  // 销毁地图
-  onUnmounted(() => {
-    map.remove()
-  })
-}
+  map.addControl(zoomControl);
+};
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+// 销毁地图
+onBeforeUnmount(() => {
+  if (map) {
+    map.remove();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

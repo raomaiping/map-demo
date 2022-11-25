@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 箭头动画
 
 ::: tip
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/arrow-animation/styles.js
+<<< @/open-layers/map-marker/arrow-animation/styles.ts
 
 :::

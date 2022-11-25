@@ -1,5 +1,6 @@
+import { defineConfig } from 'vitepress'
 import { LeafLet, OpenLayers } from './getSidebar'
-export default {
+export default defineConfig({
   title: 'Map Demo',
   description: 'OpenLayers Leaflet',
   lastUpdated: true,
@@ -70,4 +71,4 @@ export default {
       },
     },
   },
-}
+})

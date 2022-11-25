@@ -2,13 +2,13 @@
   <div id="map"></div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import { Map, View } from 'ol'
-import { Tile as TileLayer } from 'ol/layer'
-import { ScaleLine, defaults } from 'ol/control'
-import { XYZ } from 'ol/source'
-import { MAPURL, ATTRIBUTIONS } from '/constants'
+<script lang="ts" setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { Map, View } from "ol";
+import { Tile as TileLayer } from "ol/layer";
+import { ScaleLine, defaults } from "ol/control";
+import { XYZ } from "ol/source";
+import { MAPURL, ATTRIBUTIONS } from "../../../constants";
 
 const raster = new TileLayer({
   source: new XYZ({
@@ -16,24 +16,26 @@ const raster = new TileLayer({
     url: MAPURL,
     maxZoom: 20,
   }),
-})
+});
 
 //实例化比例尺控件（ScaleLine）
 const scaleLineControl = new ScaleLine({
   //设置比例尺单位，degrees、imperial、us、nautical、metric（度量单位）
-  units: 'metric',
-})
+  units: "metric",
+});
+
+let map: Map | null = null;
 const initMap = () => {
-  const map = new Map({
+  map = new Map({
     //初始化map
-    target: 'map',
+    target: "map",
     //地图容器中加载的图层
     layers: [
       //加载瓦片图层数据
       raster,
     ],
     view: new View({
-      projection: 'EPSG:4326', // 坐标系，有EPSG:4326和EPSG:3 857
+      projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3 857
       center: [0, 0],
       //地图初始显示级别
       zoom: 5,
@@ -41,11 +43,18 @@ const initMap = () => {
     //加载控件到地图容器中
     //加载比例尺控件
     controls: defaults().extend([scaleLineControl]),
-  })
-}
+  });
+};
 onMounted(() => {
-  initMap()
-})
+  initMap();
+});
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.dispose();
+    map = null;
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

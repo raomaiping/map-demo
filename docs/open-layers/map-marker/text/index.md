@@ -1,6 +1,7 @@
 <script setup>
 import Map from './index.vue'
 </script>
+
 # 文字标注
 
 ::: tip
@@ -21,6 +22,6 @@ import Map from './index.vue'
 
 ::: details 点我查看代码
 
-<<< @/open-layers/map-marker/text/tools.js
+<<< @/open-layers/map-marker/text/tools.ts
 
 :::
