@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, onBeforeUnmount } from 'vue'
 import L from 'leaflet'
+import { onMounted, onBeforeUnmount } from 'vue'
 import '/external-resources/leaflet-side-by-side'
 import { ATTRIBUTIONS } from '../../../constants'
 
