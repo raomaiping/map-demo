@@ -2,11 +2,11 @@
 layout: home
 
 title: Map Demo
-titleTemplate: 一个 Map 案例合集 
+titleTemplate: 一个 Map 案例合集
 
 hero:
   name: Map Demo
-  text: Map 案例合集 
+  text: Map 案例合集
   tagline: 没啥特点仅供学习
   image:
     src: /image/dog.png
@@ -24,10 +24,6 @@ hero:
     - theme: alt
       text: openlayers 案例
       link: http://openlayers.raomaiping.host/
-    - theme: alt
-      text: 个人简历
-      link: https://raomaiping.host/%E9%A5%B6%E8%BF%88%E5%B9%B3-%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-3%E5%B9%B4.pdf
-      
 
 features:
   - icon: 🌏
@@ -39,5 +35,4 @@ features:
   - icon: 👨‍💻
     title: 寻求一份工作
     details: 目前已经离职，想寻求一份前端工程师的工作
-    
 ---

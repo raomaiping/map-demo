@@ -2,6 +2,7 @@
 node_modules
 /dist
 docs/.vitepress/dist
+docs/.vitepress/cache
 package-lock.json
 yarn.lock
 # local env files
