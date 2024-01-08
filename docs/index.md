@@ -2,7 +2,7 @@
 layout: home
 
 title: Map Demo
-titleTemplate: 一个 Map 案例合集
+titleTemplate: 一个 Map 案例合集 测试
 
 hero:
   name: Map Demo
