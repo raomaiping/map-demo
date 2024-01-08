@@ -48,7 +48,7 @@ jobs:
         run: cp README.md ./dist/
 
       # 部署
-        - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
         with:
           # GitHub 密钥
