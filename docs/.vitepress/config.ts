@@ -1,6 +1,7 @@
 import { LeafLet, OpenLayers } from './getSidebar'
 export default {
   base: process.env.APP_BASE_PATH || '/',
+  outDir: '../dist',
   title: 'Map Demo',
   description: 'OpenLayers Leaflet',
   lastUpdated: true,
