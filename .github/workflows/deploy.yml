@@ -48,8 +48,8 @@ jobs:
         run: cp README.md ./dist/
 
       # 部署
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
         with:
           # GitHub 密钥
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
