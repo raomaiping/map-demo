@@ -50,12 +50,11 @@ jobs:
       # 部署
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
+        # 环境变量
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
-          # GitHub 密钥
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # 指定仓库
-          REPOSITORY_NAME: raomaiping/map-demo
-          # GitHub Pages 读取的分支
-          BRANCH: gh-pages
-          # 静态文件所在目录
-          FOLDER: dist
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: dist
