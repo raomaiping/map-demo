@@ -21,6 +21,7 @@
     "vue": "^3.4.6"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "@geoman-io/leaflet-geoman-free": "^2.13.0",
     "dom-to-image": "^2.6.0",
     "element-plus": "^2.2.13",

@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@element-plus/icons-vue':
+    specifier: ^2.3.1
+    version: 2.3.1(vue@3.4.6)
   '@geoman-io/leaflet-geoman-free':
     specifier: ^2.13.0
     version: 2.15.0(leaflet@1.9.4)
