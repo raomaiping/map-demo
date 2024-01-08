@@ -6,14 +6,14 @@
   "author": "饶迈平 <2582395486@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vitepress dev docs --port=3000",
-    "build": "vitepress build docs",
-    "build:github": "cross-env APP_BASE_PATH=/map-demo/ npm run build"
+    "dev": "vitepress dev docs --port=3000",
+    "build": "vitepress build docs"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/leaflet": "^1.9.0",
     "@types/node": "^18.11.9",
-    "cross-env": "^7.0.3",
     "terser": "^5.15.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4",
@@ -38,7 +38,6 @@
     "leaflet-nav": "^1.0.3",
     "leaflet-path-transform": "^1.8.0-beta.3",
     "leaflet-polylinedecorator": "^1.6.0",
-    "leaflet-side-by-side2": "^2.2.0",
     "leaflet.browser.print": "^2.0.2",
     "leaflet.chinatmsproviders": "^3.0.6",
     "leaflet.fullscreen2": "^1.0.0",

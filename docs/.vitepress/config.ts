@@ -1,6 +1,7 @@
 import { LeafLet, OpenLayers } from './getSidebar'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 export default {
-  base: process.env.APP_BASE_PATH || '/',
   outDir: '../dist',
   title: 'Map Demo',
   description: 'OpenLayers Leaflet',
