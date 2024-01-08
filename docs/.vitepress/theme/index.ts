@@ -42,7 +42,8 @@ export default {
        */
       'nav-bar-title-after': () => h(NavVisitor),
       'aside-outline-after': () => h(AsideSponsors),
-      'doc-after': () => h(Gitalk),
+      'doc-after': () => h(DocFooter),
+      'doc-footer-before': () => h(Gitalk),
     })
   },
   enhanceApp: async ({

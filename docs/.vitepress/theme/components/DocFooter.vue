@@ -5,7 +5,7 @@ import { useRoute } from 'vitepress'
 const DEV = inject('DEV') as Ref<boolean>
 const route = useRoute()
 
-const pageId = computed(() => route.path.replace('/map-demo', ''))
+const pageId = computed(() => route.path)
 </script>
 
 <template>

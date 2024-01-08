@@ -1,25 +1,28 @@
 <script setup>
-import { onMounted } from 'vue'
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
-
-onMounted(() => {
-  const gitalk = new Gitalk({
-    clientID: '0154571a205dc5aba796',
-    clientSecret: 'e6d101342222cb0c6e06ee24c4576c59cb28de43',
-    repo: 'map-demo',
-    owner: 'raomaiping',
-    admin: [],
-    id: location.pathname, // Ensure uniqueness and length less than 50
-    distractionFreeMode: false, // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-})
+import Giscus from '@giscus/vue'
 </script>
 
 <template>
-  <div id="gitalk-container"></div>
+  <div class="giscus">
+    <Giscus
+      repo="raomaiping/map-demo"
+      repoId="R_kgDOIBaq8Q"
+      category="Announcements"
+      categoryId="DIC_kwDOIBaq8c4CcSa7"
+      mapping="url"
+      strict="0"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="bottom"
+      theme="preferred_color_scheme"
+      lang="zh-CN"
+      loading="lazy"
+    ></Giscus>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.giscus {
+  margin-bottom: 60px;
+}
+</style>
