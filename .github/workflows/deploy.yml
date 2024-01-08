@@ -16,47 +16,40 @@ env:
   TZ: Asia/Shenzhen
 
 # 任务
-
 jobs:
-  docs:
-    runs-on: ubuntu-latest # 指定运行所需要的虚拟机环境（必填）
-
+  build-and-deploy:
+    # 服务器环境：最新版 ubuntu
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
-          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      # 安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          # 选择要使用的 node 版本
-          node-version: '18'
+          version: 8
 
-      # 缓存 node_modules
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
+      # 设置 node 版本
+      - name: Set node version to 18
+        uses: actions/setup-node@v3
         with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version: 18
+          cache: 'pnpm'
 
-      # 如果缓存没有命中，安装依赖
-      - name: Install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
+      # 打包静态文件
+      - name: Build
+        run: pnpm install && pnpm run build:github
 
-      # 运行构建脚本
-      - name: Build VitePress site
-        run: yarn run build:github
+      - name: Copy files
+        run: cp README.md ./dist/
 
-      # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
+      # 部署
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           # GitHub 密钥
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
