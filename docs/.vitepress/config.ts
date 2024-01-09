@@ -65,6 +65,10 @@ export default {
         text: 'Leaflet 案例合集',
         link: '/leaflet/introduction/map-display/index',
       },
+      {
+        text: 'Gis教程',
+        link: 'https://juejin.cn/column/7087829365706850335',
+      },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/raomaiping/map-demo' },
