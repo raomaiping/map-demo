@@ -21,6 +21,9 @@ hero:
     - theme: alt
       text: leaflet 中文网
       link: https://leafletjs.cn/
+    - theme: alt
+      text: openlayers 案例
+      link: https://openlayers.raomaiping.host/
 
 features:
   - icon: 🌏
